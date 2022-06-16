@@ -90,10 +90,10 @@ namespace IntelligentAgents
         public Boolean checkIfIsOver()
         {
             getStatus();
-            return (currentCereal == goalCereal &&
-                currentGold == goalGold &&
-                currentWood == goalWood &&
-                currentIron == goalIron
+            return (currentCereal >= goalCereal &&
+                currentGold >= goalGold &&
+                currentWood >= goalWood &&
+                currentIron >= goalIron
                 );
         }
     }

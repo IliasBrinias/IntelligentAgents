@@ -48,7 +48,7 @@ namespace IntelligentAgents
 
             // Generate Resources
             int bound = locations.Count / 3;
-            int upperBound = (int)(locations.Count *0.6);
+            int upperBound = (int)(locations.Count *0.9);
 
             for (int i = 0; i < r.Next(bound, upperBound); i++)
             {

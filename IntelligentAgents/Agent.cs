@@ -23,17 +23,20 @@ namespace IntelligentAgents
         Random r;
         public Agent(int[] location)
         {
-            carry = "";
+            carry = Constants.NO_CARRY;
             IsAlive = true;
             this.currentX = location[0];
             this.currentY = location[1];
             r = new Random();
-            energyPoint = 50;
+            energyPoint = 200;
             discoveredAreas = new Dictionary<int[], bool>();
             this.name = name;
         }
         public int move()
         {
+            energyPoint--;
+            if (energyPoint <= 0) IsAlive = false;
+            Console.WriteLine("Energy: " + energyPoint);
             return r.Next(1, 3);
         }
         internal int[] moveRandomly(Dictionary<string, object> nearbyCells)
@@ -46,15 +49,23 @@ namespace IntelligentAgents
         }
         internal Boolean returnToVillage(int[] villagePosition, Dictionary<String, Object> nearbyCells)
         {
-            Dictionary<String, Object> nextLocation = moveTo(villagePosition, nearbyCells);
-
-            int[] newPosition = (int[]) nextLocation["location"];
-
-            currentX = newPosition[0]; currentY = newPosition[1];
-
-            return villagePosition[0] == getCurrentPosition()[0] && villagePosition[1] == getCurrentPosition()[1];
+            return goToLocation(villagePosition, nearbyCells);
         }
 
+        internal Boolean moveToResource(int[] resourcePosition, Dictionary<String, Object> nearbyCells)
+        {
+            return goToLocation(resourcePosition, nearbyCells);
+        }
+        private Boolean goToLocation(int[] targetPosition, Dictionary<String, Object> nearbyCells)
+        {
+                Dictionary<String, Object> nextLocation = moveTo(targetPosition, nearbyCells);
+
+                int[] newPosition = (int[])nextLocation["location"];
+
+                currentX = newPosition[0]; currentY = newPosition[1];
+
+                return targetPosition[0] == getCurrentPosition()[0] && targetPosition[1] == getCurrentPosition()[1];
+        }
         public Dictionary<String, Object> moveTo(int[] targetPosition, Dictionary<String, Object> nearbyCells)
         {
             Console.WriteLine("!Move To ");
