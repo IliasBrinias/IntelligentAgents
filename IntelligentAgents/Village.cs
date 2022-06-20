@@ -41,27 +41,37 @@ namespace IntelligentAgents
             // Generates Agents
             for (int j = 0; j < K; j++)
             {
-                firstTeam.Add(new FirstTeamAgent(this.location, Constants.getRandomResources()));
-                secondTeam.Add(new SecondTeamAgent(this.location));
+                firstTeam.Add(new FirstTeamAgent(location, Constants.CEREALS));
+                //secondTeam.Add(new SecondTeamAgent(this.location));
             }
         }
-        public void addResources(String resources)
+        public List<String> addResources(List<String> resources)
         {
-            if (resources.Equals(Constants.GOLD))
+            List<String> newInventory = new List<string>();
+            foreach(String r in resources)
             {
-                addGold();
-            }else if(resources.Equals(Constants.WOOD))
-            {
-                addWood();
+                if (r.Equals(Constants.GOLD))
+                {
+                    addGold();
+                }
+                else if (r.Equals(Constants.WOOD))
+                {
+                    addWood();
+                }
+                else if (r.Equals(Constants.IRON))
+                {
+                    addIron();
+                }
+                else if (r.Equals(Constants.CEREALS))
+                {
+                    addCereal();
+                }
+                else if (r.Equals(Constants.ENERGY_POTS))
+                {
+                    newInventory.Add(Constants.ENERGY_POTS);
+                }
             }
-            else if (resources.Equals(Constants.IRON))
-            {
-                addIron();
-            }
-            else if (resources.Equals(Constants.CEREALS))
-            {
-                addCereal();
-            }
+            return newInventory;
         }
         public bool addWood()
         {

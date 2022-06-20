@@ -14,15 +14,17 @@ namespace IntelligentAgents
         public String[,] map { get; } 
         public int N { get; set; }
         public int M { get; set; }
+        public int mapCost { get; set; }
 
-        public Map(int n, int m, int k)
+        public Map(int n, int m, double x, int k, int y)
         {
             r = new Random();
             N = n;
             M = m;
-            map = generateMap(n,m,k);
+            mapCost = y;
+            map = generateMap(n,m,x,k);
         }
-        private String[,] generateMap(int N, int M, int K)
+        private String[,] generateMap(int N, int M, double X, int K)
         {
             String[,] map = new String[N, M];
             List<int[]> locations = new List<int[]>();
@@ -46,15 +48,26 @@ namespace IntelligentAgents
             firstVillage.generateAgents(K);
             secondVillage.generateAgents(K);
 
+            //Generate Energy Pots
+            for (int i = 0; i < locations.Count * X; i++)
+            {
+                int randomIndex = r.Next(0, locations.Count);
+                int[] loacationIndex = locations[randomIndex];
+                map[loacationIndex[0], loacationIndex[1]] = Constants.ENERGY_POTS;
+                //map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources();
+                locations.RemoveAt(randomIndex);
+            }
+
             // Generate Resources
-            int bound = locations.Count / 3;
-            int upperBound = (int)(locations.Count *0.9);
+            int bound = locations.Count / 2;
+            int upperBound = (int)(locations.Count *0.98);
 
             for (int i = 0; i < r.Next(bound, upperBound); i++)
             {
                 int randomIndex = r.Next(0, locations.Count);
                 int[] loacationIndex = locations[randomIndex];
-                map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources();
+                map[loacationIndex[0], loacationIndex[1]] = Constants.CEREALS;
+                //map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources();
                 locations.RemoveAt(randomIndex);
             }
             foreach (int[] location in locations)
@@ -80,17 +93,40 @@ namespace IntelligentAgents
         }
         private int[] getUpPosition(int[] currentLocation, int step) {
 
-            
+            if(currentLocation[0] - step < 0)
+            {
+                return new int[] { currentLocation[0] - 1, currentLocation[1] };
+
+            }
             return new int[] {currentLocation[0] - step ,  currentLocation[1]};
         }
         private int[] getDownPosition(int[] currentLocation, int step) {
+            
+            if (currentLocation[0] + step > N-1)
+            {
+                return new int[] { currentLocation[0] + 1, currentLocation[1] };
+
+            }
 
             return new int[] { currentLocation[0] + step ,  currentLocation[1]  };
         }
         private int[] getRightPosition(int[] currentLocation, int step) {
+            if (currentLocation[1] + step > M-1)
+            {
+                return new int[] { currentLocation[0], currentLocation[1] + 1 };
+
+            }
+
             return new int[]  { currentLocation[0],  currentLocation[1] + step };
         }
         private int[] getLeftPosition(int[] currentLocation, int step) {
+           
+            if (currentLocation[1] - step < 0)
+            {
+                return new int[] { currentLocation[0], currentLocation[1] - 1 };
+
+            }
+
             return new int[] { currentLocation[0], currentLocation[1] - step};
         }
         private Dictionary<String,Object> getDictionary(int[] position, String mapItem)

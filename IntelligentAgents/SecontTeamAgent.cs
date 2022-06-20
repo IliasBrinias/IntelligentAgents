@@ -14,7 +14,7 @@ namespace IntelligentAgents
         }
         internal bool chechIfTheCellHasRecource(string mapCell)
         {
-            return !mapCell.Equals(Constants.NOTHING) && !mapCell.Equals(Constants.Village) && !mapCell.Equals(Constants.NOTHING);
+            return !mapCell.Equals(Constants.NOTHING) && !mapCell.Equals(Constants.Village);
 
         }
 

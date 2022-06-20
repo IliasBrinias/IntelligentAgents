@@ -8,29 +8,29 @@ namespace IntelligentAgents
 {
     internal class Agent
     {
+        public List<String> inventory { get; set; }
         public Boolean IsAlive { get; set; }
         public int energyPoint { get; set; }
+
         public int currentX { get; set; }
         public int currentY { get; set; }
+
         public int[] getCurrentPosition() {return new[] { currentX, currentY };}
 
-
-        public string carry { get; set; }
-        public String name { get; set; }
+        private int energyPotMultiplier = 25;
 
         public Dictionary<int[], Boolean> discoveredAreas { get; set; }
 
         Random r;
         public Agent(int[] location)
         {
-            carry = Constants.NO_CARRY;
+            inventory = new List<String>();
             IsAlive = true;
             this.currentX = location[0];
             this.currentY = location[1];
             r = new Random();
-            energyPoint = 200;
+            energyPoint = 50;
             discoveredAreas = new Dictionary<int[], bool>();
-            this.name = name;
         }
         public int move()
         {
@@ -68,7 +68,7 @@ namespace IntelligentAgents
         }
         public Dictionary<String, Object> moveTo(int[] targetPosition, Dictionary<String, Object> nearbyCells)
         {
-            Console.WriteLine("!Move To ");
+            Console.WriteLine("!Move To ("+ targetPosition[0] + ","+ targetPosition[1] + ")");
             Console.WriteLine("targetPosition[0]: " + targetPosition[0]);
             Console.WriteLine("currentX: " + currentX);
             if (targetPosition[0] > currentX)
@@ -120,7 +120,11 @@ namespace IntelligentAgents
                 return (Dictionary<String, Object>)nearbyCells.First().Value;
             }
         }
-
+        public void increaseEnergy()
+        {
+            Console.WriteLine("Energy increced from :" + energyPoint + " To: " + (energyPoint + energyPotMultiplier));
+            energyPoint += energyPotMultiplier;
+        }
 
     }
 }

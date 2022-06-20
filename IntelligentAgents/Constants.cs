@@ -17,7 +17,6 @@ namespace IntelligentAgents
         public static String NO_CARRY = "NC";
         public static String AGIENTS_DIED = "AD";
         public static String VILLAGE_WIN = "VW";
-
         public static String Village = "V";
 
         public static String getRandomResources()

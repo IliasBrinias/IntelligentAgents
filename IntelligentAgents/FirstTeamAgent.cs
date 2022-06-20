@@ -8,19 +8,27 @@ namespace IntelligentAgents
 {
     internal class FirstTeamAgent : Agent
     {
+        private readonly int LOW_ENERGY = 25;
+        private int[] villageLoc;
         Random r;
         public string qualify { get; set; }
+        public int discoveredAreasCount { get; set; }
+
         public List<int[]> discoveredResources { get; set; }
+        public List<int[]> discoveredEnergy { get; set; }
         public Dictionary<int,Object> discoveredAreas;
         public FirstTeamAgent(int[] location, string qualify) : base(location)
         {
+            villageLoc = location;
+            discoveredAreasCount = 0;
             discoveredAreas = new Dictionary<int, Object>();
             Dictionary<int,Boolean> discoveredAreasMap = new Dictionary<int,Boolean>();
             discoveredAreasMap.Add(getCurrentPosition()[1], true);
             discoveredAreas.Add(getCurrentPosition()[0], discoveredAreasMap);
             this.qualify = qualify;
             discoveredResources = new List<int[]>();
-            r= new Random();
+            discoveredEnergy = new List<int[]>();
+            r = new Random();
         }
         public int[] movedToDiscoveredResources(Dictionary<String, Object> nearbyCells)
         {
@@ -31,12 +39,10 @@ namespace IntelligentAgents
             currentY = newPosition[1];
             if (discoveredResources[0] == getCurrentPosition())
             {
-                carry = (string) nextLocation["item"];
+                inventory.Add((string)nextLocation["item"]);
             }
             return newPosition;
         }
-
-
 
         internal bool chechIfTheCellHasRecource(string mapCell)
         {
@@ -52,43 +58,133 @@ namespace IntelligentAgents
             discoveredResources.Add(location);
         }
 
-        public int[] chooseTheCell(Dictionary<String,Object> nearbyCells)
+        public int[] chooseTheCellBasedOn(Dictionary<String,Object> nearbyCells, String flag)
         {
             List<String> keys = new List<string>(nearbyCells.Keys);
             List<int[]> undescoveredAreas = new List<int[]>();
+            List<int[]> areasWithResourcesToSave = new List<int[]>();
+
             // check if some of nearby cells are undescovered
-            for( int i = 0; i < keys.Count; i++)
+            for ( int i = 0; i < keys.Count; i++)
             {
                 int[] location = (int[])((Dictionary<String, Object>)nearbyCells[keys[i]])["location"];
                 if (!checkIfTheLocationExist(location))
                 {
-                    Console.WriteLine("Undescover: "+keys[i]);
-                    if (((String)((Dictionary<String, Object>)nearbyCells[keys[i]])["item"]).Equals(this.qualify))
+                    if (((String)((Dictionary<String, Object>)nearbyCells[keys[i]])["item"]).Equals(Constants.ENERGY_POTS))
                     {
-                        Console.WriteLine("find the best Option Based on Agent Qualify: (" + location[0]+","+ location[1] + "):"+ this.qualify);
-                        return saveLocationAsDiscovered(location);
+                        saveLocationOfEnergy(location);
+                    }
+
+                    Console.WriteLine("Undescover: "+keys[i]);
+                    if (((String)((Dictionary<String, Object>)nearbyCells[keys[i]])["item"]).Equals(flag))
+                    {
+                        areasWithResourcesToSave.Add(location);
                     }
                     undescoveredAreas.Add(location);
-                    
                 }
             }
             
             // pick one of the underscovered Areas to move On
             if(undescoveredAreas.Count > 0)
             {
-                int idx = r.Next(0, undescoveredAreas.Count);
-                Console.WriteLine("Picked: " + keys[idx]);
-                return saveLocationAsDiscovered(undescoveredAreas[idx]);
+                if (areasWithResourcesToSave.Count > 0)
+                {
+                    int idx = r.Next(0, areasWithResourcesToSave.Count);
+                    int[] pickedLocation = areasWithResourcesToSave[idx];
+                    areasWithResourcesToSave.RemoveAt(idx);
+                    foreach (int[] l in areasWithResourcesToSave)
+                    {
+                        discoveredResources.Add(l);
+                    }
+                    return saveLocationAsDiscovered(pickedLocation);
+                }
+                else
+                {
+                    int idx = r.Next(0, undescoveredAreas.Count);
+                    return saveLocationAsDiscovered(undescoveredAreas[idx]);
+                }
             }
             else
             {
+                Dictionary<String, Object> item;
+                // if the nearby location were discovered try to move to the enemy village
+                item = moveToTheEnemyVillage(nearbyCells);
+                if(item!=null) return saveLocationAsDiscovered((int[])item["location"]);
+
                 // if all the areas are descovered pick a random one
                 int idx = r.Next(0, keys.Count);
                 Console.WriteLine("Picked: " + keys[idx]);
-                Dictionary<String, Object> item = (Dictionary<string, object>)nearbyCells[keys[idx]];
+                item = (Dictionary<string, object>)nearbyCells[keys[idx]];
                 return saveLocationAsDiscovered((int[]) item["location"]);
             }
         }
+
+        private Dictionary<String, Object>? moveToTheEnemyVillage(Dictionary<String, Object> nearbyCells)
+        {
+            Dictionary<String, Object> item;
+
+            if (villageLoc[0] == 0 && villageLoc[1] == 0)
+            {
+                if (nearbyCells.ContainsKey("right") || nearbyCells.ContainsKey("down"))
+                {
+                    if (r.Next(0, 2) == 0)
+                    {
+                        try
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["right"];
+                        }
+                        catch
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["down"];
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["down"];
+                        }
+                        catch
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["right"];
+                        }
+                    }
+                    return item;
+                }
+            }
+            else
+            {
+                if (nearbyCells.ContainsKey("left") || nearbyCells.ContainsKey("up"))
+                {
+                    if (r.Next(0, 2) == 0)
+                    {
+                        try
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["left"];
+                        }
+                        catch
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["up"];
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["up"];
+                        }
+                        catch
+                        {
+                            item = (Dictionary<string, object>)nearbyCells["left"];
+                        }
+
+                    }
+                    return item;
+                }
+            }
+            return null;
+        }
+
         private int[] saveLocationAsDiscovered(int[] location)
         {
             Dictionary<int, Boolean> l = new Dictionary<int, bool>();
@@ -99,6 +195,7 @@ namespace IntelligentAgents
                 {
                     l.Add(location[1], true);
                     discoveredAreas[location[0]] = l;
+                    discoveredAreasCount++;
                 }
 
             }
@@ -106,8 +203,10 @@ namespace IntelligentAgents
             {
                 l = new Dictionary<int, bool>();
                 discoveredAreas.Add(location[0], l);
+                discoveredAreasCount++;
+
             }
-            Console.WriteLine("Discovered Areas");
+            Console.WriteLine("Discovered Areas ("+discoveredAreasCount+")");
             List<int> keys = new List<int>(discoveredAreas.Keys);
             
             foreach(int k in keys)
@@ -124,6 +223,38 @@ namespace IntelligentAgents
 
             return location;
         }
+        internal bool hasLowEnergy()
+        {
+            return energyPoint < LOW_ENERGY;
+        }
+
+        internal bool ifHasPosionUseIt()
+        {
+            for(int i=0; i < inventory.Count; i++)
+            {
+                if (inventory[i].Equals(Constants.ENERGY_POTS))
+                {
+                    Console.WriteLine("Posion Used");
+                    increaseEnergy();
+                    inventory.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        internal bool hasResourcesInInventory()
+        {
+            foreach(String s in inventory)
+            {
+                if (!s.Equals(Constants.ENERGY_POTS))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private Boolean checkIfTheLocationExist(int[] location)
         {
             
@@ -140,20 +271,97 @@ namespace IntelligentAgents
             }
             return false;
         }
-        public void findEnergyPots() { }
-        public void buyMapFromAgent() { }
-        public void buyEnergyPots() { }
-        public void findGold() { }
-        public void findResources() { }
+
+        internal void addToInventory(string v)
+        {
+            inventory.Add(v);
+        }
 
         internal bool hasDiscoveredResources()
         {
             return this.discoveredResources.Count > 0;
         }
+        internal bool hasDiscoveredEnergy()
+        {
+            return this.discoveredEnergy.Count > 0;
+        }
 
         internal int[] getTheLocationOfResource()
         {
+            Console.WriteLine("__");
+            Console.WriteLine("Discovered Resources");
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (int[] location in this.discoveredResources)
+            {
+                stringBuilder.Append(" (" + location[0] + "," + location[1]+") ");
+            }
+            Console.WriteLine(stringBuilder);
+            Console.WriteLine("__");
             return this.discoveredResources[0];
         }
+        internal int[] getTheLocationOfDiscoveredEnergy()
+        {
+            Console.WriteLine("__");
+            Console.WriteLine("Discovered Energy");
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (int[] location in this.discoveredEnergy)
+            {
+                stringBuilder.Append(" (" + location[0] + "," + location[1]+") ");
+            }
+            Console.WriteLine(stringBuilder);
+            Console.WriteLine("__");
+            return this.discoveredEnergy[0];
+        }
+
+        internal void saveLocationOfEnergy(int[] location)
+        {
+            for(int i = 0; i < discoveredEnergy.Count; i++)
+            {
+                if (discoveredEnergy[i][0] == location[0] && discoveredEnergy[i][1] == location[1]) return;
+            }
+            discoveredEnergy.Add(location);
+        }
+        internal List<int[]> removeResourceFromDiscoveredResources(int[] location )
+        {
+            for(int i = 0; i < discoveredResources.Count; i++)
+            {
+                if (discoveredResources[i][0] == location[0] && discoveredResources[i][1] == location[1])
+                {
+
+                    Console.WriteLine("Discover Deleted At (" + location[0] + "," + location[1] + ")");
+                    discoveredResources.RemoveAt(i);
+                    break;
+                }
+            }
+            return discoveredResources;
+        }
+        public void removeEnergyFromInventory(int[] l)
+        {
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if (inventory[i].Equals(Constants.ENERGY_POTS))
+                {
+                    inventory.RemoveAt(i);
+                    return;
+                }
+            }
+        }
+
+        public List<int[]> removeDiscoveredEnergy(int[] l)
+        {
+            Console.WriteLine(discoveredEnergy.Count);
+            for (int i = 0; i < discoveredEnergy.Count; i++)
+            {
+                if (discoveredEnergy[i][0] == l[0] && discoveredEnergy[i][1] == l[1])
+                {
+                    discoveredEnergy.RemoveAt(i);
+                    break;
+                }
+            }
+            return discoveredEnergy;
+
+        }
+
+
     }
 }
