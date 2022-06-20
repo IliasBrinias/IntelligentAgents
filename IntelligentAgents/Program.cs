@@ -20,9 +20,9 @@ namespace IntelligentAgents
                 if (true) break;
             }
 
-            int N = 20;
-            int M = 20;
-            int K = 1;
+            int N = 100;
+            int M = 100;
+            int K = 5;
             int Υ = 1;
             double X = 0.3;
             Map m = new Map(N, M, X, K, Υ);
@@ -32,14 +32,14 @@ namespace IntelligentAgents
             showStage(m);
             while (!isOver) {
                 Console.WriteLine(" Start Loop ----------------------------------------------------");
-                checkResults(villagesAgents(m, m.firstVillage), "first Village");
+                checkResults(villagesAgents(m, m.firstVillage), "First Village");
                 if (isOver) continue;
 
-                //checkResults(villagesAgents(m, m.secondVillage), "Second Village");
-                //if (isOver) continue;
+                checkResults(villagesAgents(m, m.secondVillage), "Second Village");
+                if (isOver) continue;
 
                 m.firstVillage.getStatus();
-                //m.secondVillage.getStatus();
+                m.secondVillage.getStatus();
                 showStage(m);
                 Console.WriteLine(" Finish Loop ----------------------------------------------------");
 
@@ -94,9 +94,11 @@ namespace IntelligentAgents
                     }
                     else
                     {
-                        // if the cell has energy pot increase energy to the agent
-                        if (ifTheCellHasEnergyTakeIt(m, a)) continue;
-
+                        if (m.map[a.currentX, a.currentY].Equals(Constants.ENERGY_POTS))
+                        {
+                            a.increaseEnergy();
+                            m.map[a.currentX, a.currentY] = Constants.NOTHING;
+                        }
                     }
                     continue;
                 }
@@ -107,10 +109,12 @@ namespace IntelligentAgents
                 // chech if the current position has any resources
                 if (a.chechIfTheCellHasRecource(m.map[a.currentX, a.currentY]))
                 {
-                    // if the cell has energy pot increase energy to the agent
-                    if (ifTheCellHasEnergyTakeIt(m, a)) continue;
-
-                    // carry the resources and clear the cell of the map
+                    if(m.map[a.currentX, a.currentY].Equals(Constants.ENERGY_POTS)){
+                        // if the cell has energy pot increase energy to the agent
+                        a.increaseEnergy();
+                        m.map[a.currentX, a.currentY] = Constants.NOTHING;
+                        continue;
+                    }
                     a.inventory.Add(m.map[a.currentX, a.currentY]);
                     m.map[a.currentX, a.currentY] = Constants.NOTHING;
                 }
@@ -248,6 +252,7 @@ namespace IntelligentAgents
                 ifTheCellHasEnergyTakeIt(m, a);
                 // if the cell has resorces save it to the inventory
                 ifTheMapHasResourcesTakeIt(m, a);
+                //a.checkIfAnotherAgentHasSamePosition(m.firstVillage.firstTeam, m.secondVillage.firstTeam, m.firstVillage.location);
             }
             return "";
         }
@@ -306,7 +311,7 @@ namespace IntelligentAgents
             if (FirstTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
 
             //for every Second Team Agent
-            //if (SecondTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
+            if (SecondTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
 
             // clear all the agent that they died
             v.secondTeam.RemoveAll(WhereAgentIsDead);
@@ -326,20 +331,19 @@ namespace IntelligentAgents
                 if (agentLocation.ContainsKey(a.currentX)) continue;
                 agentLocation.Add(a.currentX, a.currentY);
             }
-            //foreach(Agent a in m.firstVillage.secondTeam){
-            //    if (agentLocation.ContainsKey(a.currentX)) continue;
-            //    agentLocation.Add(a.currentX, a.currentY);
-            //}
-            //foreach(Agent a in m.secondVillage.firstTeam){
-            //    if (agentLocation.ContainsKey(a.currentX)) continue;
+            foreach(Agent a in m.firstVillage.secondTeam){
+                if (agentLocation.ContainsKey(a.currentX)) continue;
+                agentLocation.Add(a.currentX, a.currentY);
+            }
+            foreach(Agent a in m.secondVillage.firstTeam){
+                if (agentLocation.ContainsKey(a.currentX)) continue;
 
-            //    agentLocation.Add(a.currentX, a.currentY);
-            //}
-            //foreach(Agent a in m.secondVillage.secondTeam){
-            //    if (agentLocation.ContainsKey(a.currentX)) continue;
-
-            //    agentLocation.Add(a.currentX, a.currentY);
-            //}
+                agentLocation.Add(a.currentX, a.currentY);
+            }
+            foreach(Agent a in m.secondVillage.secondTeam){
+                if (agentLocation.ContainsKey(a.currentX)) continue;
+                agentLocation.Add(a.currentX, a.currentY);
+            }
             ConsoleMessages.printBoard(m.map,agentLocation);
 
 

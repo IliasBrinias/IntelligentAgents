@@ -19,20 +19,30 @@ namespace IntelligentAgents
         public static String VILLAGE_WIN = "VW";
         public static String Village = "V";
 
-        public static String getRandomResources()
+        public static String getRandomResources(int index)
         {
-            switch (new Random().Next(0, 4))
+            if (index % 100 > 50)
             {
-                case 0:
+                if (index % 50 > 25)
+                {
                     return Constants.CEREALS;
-                case 1:
+                }
+                else
+                {
                     return Constants.GOLD;
-                case 2:
-                    return Constants.IRON;
-                case 3:
-                    return Constants.WOOD;
+                }
             }
-            return Constants.WOOD;
+            else
+            {
+                if (index % 50 > 25)
+                {
+                    return Constants.IRON;
+                }
+                else
+                {
+                    return Constants.WOOD;
+                }
+            }
         }
     }
 }

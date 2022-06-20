@@ -272,6 +272,54 @@ namespace IntelligentAgents
             return false;
         }
 
+        internal void checkIfAnotherAgentHasSamePosition(List<FirstTeamAgent> aFirstVillage, List<FirstTeamAgent> aSecondVillage, int[] firstVillageLoc)
+        {
+            // check if the agent is on first Village
+            if (firstVillageLoc[0] == villageLoc[0] && firstVillageLoc[1] == villageLoc[1])
+            {
+                sameVillage(aFirstVillage);
+                enemyVillage(aSecondVillage);
+            }
+            else
+            {
+                sameVillage(aSecondVillage);
+                enemyVillage(aFirstVillage);
+
+            }
+
+        }
+        private void enemyVillage(List<FirstTeamAgent> aEnemyVillage)
+        {
+            List<FirstTeamAgent> sameLocAgentEnemyVill = new List<FirstTeamAgent>();
+            foreach (FirstTeamAgent a in aEnemyVillage)
+            {
+                if (a.currentX == currentX && a.currentY == currentY)
+                {
+                    sameLocAgentEnemyVill.Add(a);
+                }
+            }
+
+        }
+        private void sameVillage(List<FirstTeamAgent> aSameVillage)
+        {
+            List<int> sameLocAgentSameVill = new List<int>();
+            for (int i=0; i< aSameVillage.Count; i++)
+            {
+                if (aSameVillage[i].currentX == currentX && aSameVillage[i].currentY == currentY)
+                {
+                    sameLocAgentSameVill.Add(i);
+                }
+            }
+            if (sameLocAgentSameVill.Count == 0) return;
+            // if has agents 
+            foreach(int i in sameLocAgentSameVill)
+            {
+                // add the agents discover map to current agent
+
+            }
+
+        }
+
         internal void addToInventory(string v)
         {
             inventory.Add(v);
