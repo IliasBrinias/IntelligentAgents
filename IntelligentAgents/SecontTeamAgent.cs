@@ -8,9 +8,10 @@ namespace IntelligentAgents
 {
     internal class SecondTeamAgent : Agent
     {
-        public SecondTeamAgent(int[] location) : base(location)
+        public SecondTeamAgent(String name, int[] location, int M) : base(name, location)
         {
-
+            energyPoint = M;
+            energyPotMultiplier = M/4;
         }
         internal bool chechIfTheCellHasRecource(string mapCell)
         {

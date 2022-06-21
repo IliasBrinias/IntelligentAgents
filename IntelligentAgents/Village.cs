@@ -9,22 +9,25 @@ namespace IntelligentAgents
     internal class Village
     {
         Random r;
-        public readonly int goalWood = 1;
-        public readonly int goalIron = 5;
-        public readonly int goalCereal = 1;
-        public readonly int goalGold = 3;
+        public readonly int goalWood = 5;
+        public readonly int goalIron = 15;
+        public readonly int goalCereal = 4;
+        public readonly int goalGold = 10;
 
         private int currentWood;
         private int currentIron;
         private int currentCereal;
         private int currentGold;
+
+        String name;
         public List<FirstTeamAgent> firstTeam { get; set; }
         public List<SecondTeamAgent> secondTeam { get; set; }
 
         public int[] location { get; set; }
 
-        public Village(int[] location)
+        public Village(String name, int[] location)
         {
+            this.name = name;
             r = new Random();
             this.location = location;
             firstTeam = new List<FirstTeamAgent>();
@@ -39,13 +42,13 @@ namespace IntelligentAgents
 
             Console.WriteLine("Wood: " + currentWood + ", Iron: " + currentIron + ", Cereal: " + currentCereal + ", Gold: " + currentGold);
         }
-        public void generateAgents(int K)
+        public void generateAgents(int K, int M, int X, int Y)
         {
             // Generates Agents
             for (int j = 0; j < K; j++)
             {
-                firstTeam.Add(new FirstTeamAgent(location, Constants.getRandomResources(r.Next())));
-                secondTeam.Add(new SecondTeamAgent(this.location));
+                firstTeam.Add(new FirstTeamAgent(name+"F"+j,location, M, X, Y, Constants.getRandomResources(r.Next())));
+                secondTeam.Add(new SecondTeamAgent(name + "F" + j, this.location, M));
             }
         }
         public List<String> addResources(List<String> resources)
@@ -76,25 +79,25 @@ namespace IntelligentAgents
             }
             return newInventory;
         }
-        public bool addWood()
+        private bool addWood()
         {
             currentWood++;
             return checkIfIsOver();
         }
 
-        public bool addIron()
+        private bool addIron()
         {
             currentIron++;
             return checkIfIsOver();
 
         }
-        public bool addCereal()
+        private bool addCereal()
         {
             currentCereal++;
             return checkIfIsOver();
 
         }
-        public bool addGold()
+        private bool addGold()
         {
             currentGold++;
             return checkIfIsOver();

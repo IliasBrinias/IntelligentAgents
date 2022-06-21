@@ -14,17 +14,17 @@ namespace IntelligentAgents
         public String[,] map { get; } 
         public int N { get; set; }
         public int M { get; set; }
-        public int mapCost { get; set; }
 
-        public Map(int n, int m, double x, int k, int y)
+        public Map(int n, int m, double p, int k, int x, int y)
         {
+
             r = new Random();
             N = n;
             M = m;
-            mapCost = y;
-            map = generateMap(n,m,x,k);
+            
+            map = generateMap(n, m, p, k, x, y);
         }
-        private String[,] generateMap(int N, int M, double X, int K)
+        private String[,] generateMap(int N, int M, double P, int K, int X, int Y)
         {
             String[,] map = new String[N, M];
             List<int[]> locations = new List<int[]>();
@@ -38,29 +38,29 @@ namespace IntelligentAgents
             }
             
             // Generate Villages
-            firstVillage = new Village(new int[] {0,0});
+            firstVillage = new Village("F",new int[] {0,0});
             map[0, 0] = Constants.Village;
 
-            secondVillage = new Village(new int[] {N-1,M-1});
+            secondVillage = new Village("S", new int[] {N-1,M-1});
             map[ N-1, M-1 ] = Constants.Village;
 
             //generate Agents
-            firstVillage.generateAgents(K);
-            secondVillage.generateAgents(K);
+            firstVillage.generateAgents(K, M, X, Y);
+            secondVillage.generateAgents(K, M, X, Y);
 
             //Generate Energy Pots
-            for (int i = 0; i < locations.Count * X; i++)
+            for (int i = 0; i < locations.Count * P; i++)
             {
                 int randomIndex = r.Next(0, locations.Count);
                 int[] loacationIndex = locations[randomIndex];
-                //map[loacationIndex[0], loacationIndex[1]] = Constants.ENERGY_POTS;
-                map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources(r.Next());
+                map[loacationIndex[0], loacationIndex[1]] = Constants.ENERGY_POTS;
+                //map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources(r.Next());
                 locations.RemoveAt(randomIndex);
             }
 
             // Generate Resources
             int bound = locations.Count / 2;
-            int upperBound = (int)(locations.Count *0.98);
+            int upperBound = (int)(locations.Count *0.9);
 
             for (int i = 0; i < r.Next(bound, upperBound); i++)
             {

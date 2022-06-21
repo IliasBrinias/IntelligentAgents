@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace IntelligentAgents
 {
@@ -11,14 +12,21 @@ namespace IntelligentAgents
         private readonly int LOW_ENERGY = 25;
         private int[] villageLoc;
         Random r;
+        public int mapValue { get; set; }
+        public int potValue { get; set; }
         public string qualify { get; set; }
         public int discoveredAreasCount { get; set; }
 
         public List<int[]> discoveredResources { get; set; }
         public List<int[]> discoveredEnergy { get; set; }
         public Dictionary<int,Object> discoveredAreas;
-        public FirstTeamAgent(int[] location, string qualify) : base(location)
+        public FirstTeamAgent(String name, int[] location,int M, int X, int Y , string qualify) : base(name, location)
         {
+            mapValue = Y;
+            potValue = X;
+            LOW_ENERGY = (int) M / 4;
+            energyPoint = 50;
+            energyPotMultiplier = LOW_ENERGY;
             villageLoc = location;
             discoveredAreasCount = 0;
             discoveredAreas = new Dictionary<int, Object>();
@@ -290,21 +298,169 @@ namespace IntelligentAgents
         }
         private void enemyVillage(List<FirstTeamAgent> aEnemyVillage)
         {
-            List<FirstTeamAgent> sameLocAgentEnemyVill = new List<FirstTeamAgent>();
-            foreach (FirstTeamAgent a in aEnemyVillage)
+            List<int> sameLocAgentEnemyVill = new List<int>();
+            for (int i = 0; i < aEnemyVillage.Count; i++)
             {
-                if (a.currentX == currentX && a.currentY == currentY)
+                if (!aEnemyVillage[i].IsAlive) continue;
+                if (aEnemyVillage[i].currentX == currentX && aEnemyVillage[i].currentY == currentY)
                 {
-                    sameLocAgentEnemyVill.Add(a);
+                    sameLocAgentEnemyVill.Add(i);
+                }
+            }
+            if (sameLocAgentEnemyVill.Count == 0) return;
+            
+            int resourcesForTrading = countResourcesForTrade();
+            // if he hasnt resources to trade dont request
+            if (resourcesForTrading < mapValue && resourcesForTrading < potValue) return;
+
+            foreach (int idx in sameLocAgentEnemyVill)
+            {
+                // for each enemy agent
+
+                switch (r.Next())
+                {
+                    case 0:
+                        if (resourcesForTrading >= mapValue)
+                        {
+                            Console.WriteLine(name + " request map from " + aEnemyVillage[idx].name);
+                            requestMapFromEnemyAgent(aEnemyVillage[idx]);
+                        }
+                        break;
+                    case 1:
+                        if (resourcesForTrading >= potValue)
+                        {
+                            Console.WriteLine(name + " request pot from " + aEnemyVillage[idx].name);
+
+                            requestPotFromEnemyAgent(aEnemyVillage[idx]);
+                        }
+                        break;
                 }
             }
 
         }
+
+        private void requestPotFromEnemyAgent(FirstTeamAgent enemyAgent)
+        {
+            if (enemyAgent.responseForPot())
+            {
+                Console.WriteLine(name + " pot received");
+
+                transferPotsTo(enemyAgent, potValue);
+                // get one Pot
+                inventory.Add(enemyAgent.getPot());
+            }
+            Console.WriteLine(name + " pot declined");
+
+        }
+
+        private void transferPotsTo(FirstTeamAgent enemyAgent, int count)
+        {
+            // collect resources
+            List<String> resources = new List<String>();
+            List<int> idx = new List<int>();
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if (!inventory[i].Equals(Constants.ENERGY_POTS)) continue;
+                idx.Add(i);
+                resources.Add(inventory[i]);
+                if (resources.Count == count) break;
+            }
+            // remove them
+            foreach (String r in resources)
+            {
+                inventory.Remove(r);
+            }
+            // pay
+            for (int i = 0; i < idx.Count; i++)
+            {
+                enemyAgent.inventory.Add(resources[i]);
+            }
+        }
+
+        private void requestMapFromEnemyAgent(FirstTeamAgent enemyAgent)
+        {
+            if (enemyAgent.responseForMap())
+            {
+                Console.WriteLine(enemyAgent.name + " accepted");
+                transferResourcesTo(enemyAgent, mapValue);
+                // get Compine Map
+                discoveredAreas = compineData(enemyAgent.discoveredAreas, this.discoveredAreas);
+                Console.WriteLine(name + " map is updated");
+
+                return;
+            }
+            Console.WriteLine(enemyAgent.name + " declined");
+
+        }
+
+        private void transferResourcesTo(FirstTeamAgent enemyAgent, int count)
+        {
+            // collect resources
+            List<String> resources = new List<String>();
+            List<int> idx = new List<int>();
+            for(int i=0; i < inventory.Count; i++)
+            {
+                if (inventory[i].Equals(Constants.ENERGY_POTS)) continue;
+                idx.Add(i);
+                resources.Add(inventory[i]);
+                if (resources.Count == count) break;
+            }
+            // remove them
+            foreach (String r in resources)
+            {
+                inventory.Remove(r);
+            }
+            // pay
+            for (int i=0; i < idx.Count; i++)
+            {
+                enemyAgent.inventory.Add(resources[i]);
+            }
+            
+        }
+
+        private bool responseForPot()
+        {
+            if (getPosionCount() > 0)
+            {
+                return r.Next() % 100 < 50;
+            }
+            return false;
+        }
+
+        private string getPot()
+        {
+            for(int i=0; i < inventory.Count; i++)
+            {
+                if (inventory[i].Equals(Constants.ENERGY_POTS))
+                {
+                    inventory.RemoveAt(i);
+                    return Constants.ENERGY_POTS;
+                }
+            }
+            return null;
+        }
+
+        private int countResourcesForTrade()
+        {
+            int count = 0;
+            foreach(String item in inventory)
+            {
+                if(item != Constants.ENERGY_POTS) { count++; }
+            }
+            return count;
+        }
+
+        private bool responseForMap()
+        {
+            return r.Next() % 100 < 50;
+        }
+
         private void sameVillage(List<FirstTeamAgent> aSameVillage)
         {
             List<int> sameLocAgentSameVill = new List<int>();
             for (int i=0; i< aSameVillage.Count; i++)
             {
+                if (!aSameVillage[i].IsAlive) continue;
                 if (aSameVillage[i].currentX == currentX && aSameVillage[i].currentY == currentY)
                 {
                     sameLocAgentSameVill.Add(i);
@@ -312,12 +468,148 @@ namespace IntelligentAgents
             }
             if (sameLocAgentSameVill.Count == 0) return;
             // if has agents 
-            foreach(int i in sameLocAgentSameVill)
+            foreach(int idx in sameLocAgentSameVill)
             {
-                // add the agents discover map to current agent
+                if (aSameVillage[idx].name.Equals(name)) continue;
+                Console.WriteLine("Exchange Knoledge");
 
+                // update their discover Areas
+                Dictionary<int, Object> data = compineData(discoveredAreas, aSameVillage[idx].discoveredAreas);
+                discoveredAreas = data;
+                aSameVillage[idx].discoveredAreas = data;
+                Console.WriteLine("Discovered Area compinded");
+
+                // compine discover Resources
+                List<int[]> compineListResources =  compineLists(discoveredResources, aSameVillage[idx].discoveredResources);
+                discoveredResources = compineListResources;
+                aSameVillage[idx].discoveredResources = compineListResources;
+                Console.WriteLine("List Resources compinded");
+
+                // compine discover Energy
+                List<int[]> compineListEnergy=  compineLists(discoveredEnergy, aSameVillage[idx].discoveredEnergy);
+                if (discoveredEnergy.Count > 0)
+                {
+                    int x = 8;
+                }
+                discoveredEnergy = compineListEnergy;
+                aSameVillage[idx].discoveredEnergy = compineListEnergy;
+                Console.WriteLine("List Energy compinded");
+
+                // give or get a posion if he need it
+                exchangePosions(this, aSameVillage[idx]);
             }
+        }
 
+        public static List<int[]> compineLists(List<int[]> list, List<int[]> list1)
+        {
+            if (list.Count > 0 || list1.Count>0)
+            {
+                int x = 8;
+            }
+            List<int[]> result = new List<int[]>();
+            result.AddRange(list);
+            foreach (int[] l1 in list1)
+            {
+                bool exists = false;
+                foreach (int[] l in list)
+                {
+                    if (l[0] != l1[0] || l[1] != l1[1])
+                    {
+                        exists = true;
+                    }
+                }
+                if (exists)
+                {
+                    result.Add(l1);
+                }
+                exists = false;
+            }
+            return result;
+        }
+
+        private void exchangePosions(FirstTeamAgent currentAgent, FirstTeamAgent playmate)
+        {
+            if(currentAgent.getPosionCount()>1 && playmate.getPosionCount() == 0)
+            {
+                currentAgent.givePosionToPlaymate(playmate);
+            }else if(playmate.getPosionCount()>1 && currentAgent.getPosionCount() == 0)
+            {
+                playmate.givePosionToPlaymate(currentAgent);
+            }
+        }
+
+        private void givePosionToPlaymate(FirstTeamAgent playmate)
+        {
+            for(int i=0; i< inventory.Count;i++)
+            {
+                if (inventory[i].Equals(Constants.ENERGY_POTS))
+                {
+                    inventory.RemoveAt(i);
+                    break;
+                }
+            }
+            playmate.inventory.Add(Constants.ENERGY_POTS);
+            Console.WriteLine("Exchange Posions");
+        }
+
+        private int getPosionCount()
+        {
+            int countPosions = 0;
+            foreach(String item in inventory)
+            {
+                if (item == Constants.ENERGY_POTS)
+                {
+                    countPosions++;
+                }
+            }
+            return countPosions;
+        }
+        private Dictionary<int,Object> compineData(Dictionary<int, Object> data, Dictionary<int, Object> data1)
+        {
+            Dictionary<int,Object> compineData = new Dictionary<int,Object>();
+            List<int> keys = new List<int>(data.Keys);
+            List<int> keys1 = new List<int>(data1.Keys);
+
+            // get all the data from the first dic
+            foreach(int k in keys)
+            {
+                Dictionary<int,Boolean> compineDataKey = new Dictionary<int,Boolean>();
+                Dictionary<int,Boolean> keyData = (Dictionary<int, Boolean>) data[k];
+                if (data1.ContainsKey(k))
+                {
+                    // if the key of first dic exist on the sec disc merge the values
+                    Dictionary<int, Boolean> key1Data = (Dictionary<int, Boolean>)data1[k];
+                    compineDataKey = MergeDictionaries(keyData, key1Data);
+                    compineData.Add(k, compineDataKey);
+                }
+                else
+                {
+                    // if the key doesnt exist on sec dic add to compine data the first dic data
+                    compineData.Add(k, keyData);
+
+                }
+            }
+            // remove all the keys of the sec dic keys to track if the sec dic has unique data
+            foreach(int k in keys)
+            {
+                keys1.Remove(k);
+            }
+            // add the unuque data to the compine dic
+            foreach (int k in keys1)
+            {
+                Dictionary<int, Boolean> keyData = (Dictionary<int, Boolean>)data1[k];
+                compineData.Add(k, keyData);
+            }
+            
+            return compineData;
+        }
+        private Dictionary<int, Boolean> MergeDictionaries(Dictionary<int, Boolean> me, Dictionary<int, Boolean> merge)
+        {
+            foreach (var item in merge)
+            {
+                me[item.Key] = item.Value;
+            }
+            return me;
         }
 
         internal void addToInventory(string v)
@@ -407,9 +699,6 @@ namespace IntelligentAgents
                 }
             }
             return discoveredEnergy;
-
         }
-
-
     }
 }

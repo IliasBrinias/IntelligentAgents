@@ -12,38 +12,51 @@ namespace IntelligentAgents
         static void Main() {
             // N, M dim N,M>100x100
             // K agents
+            // P how many pots
             // X Energy Pot value
             // Y Map Cost
-//                Console.WriteLine(i);
-            while (true)
-            {
-                if (true) break;
-            }
-
             int N = 100;
             int M = 100;
             int K = 5;
-            int Υ = 1;
-            double X = 0.3;
-            Map m = new Map(N, M, X, K, Υ);
+            int Υ = 2;
+            int X = 1;
+            double P = 0.2;
+            Map m = new Map(N, M, P, K, X, Υ);
             
             String[,] map = m.map;
             Dictionary<int, int> agentLocation = new Dictionary<int, int>();
             showStage(m);
             while (!isOver) {
                 Console.WriteLine(" Start Loop ----------------------------------------------------");
+                Console.WriteLine("!! First Village");
                 checkResults(villagesAgents(m, m.firstVillage), "First Village");
                 if (isOver) continue;
+                Console.WriteLine("!! Second Village");
 
-                checkResults(villagesAgents(m, m.secondVillage), "Second Village");
-                if (isOver) continue;
+                //checkResults(villagesAgents(m, m.secondVillage), "Second Village");
+                //if (isOver) continue;
 
                 m.firstVillage.getStatus();
-                m.secondVillage.getStatus();
+                //m.secondVillage.getStatus();
                 showStage(m);
                 Console.WriteLine(" Finish Loop ----------------------------------------------------");
 
             }
+        }
+        private static void printDic(Dictionary<int,Object> data)
+        {
+            foreach (int i in new List<int>(data.Keys))
+            {
+                Dictionary<int, Boolean> dicV = (Dictionary<int, bool>)data[i];
+                StringBuilder stringBuilder = new StringBuilder();
+                foreach (int y in new List<int>(dicV.Keys))
+                {
+                    stringBuilder.Append("(" + i + "," + y + ")");
+                }
+                Console.WriteLine(stringBuilder);
+
+            }
+
         }
         private static void checkResults(String result, String villageName)
         {
@@ -72,6 +85,8 @@ namespace IntelligentAgents
                 {
                     continue;
                 }
+                Console.WriteLine("Second Team");
+
                 // get the cells that the agent can move base on step
                 Dictionary<String, Object> nearbyCells = m.getNearbyCellsWithStep(a.getCurrentPosition(), a.move());
                 
@@ -153,7 +168,8 @@ namespace IntelligentAgents
                 {
                     continue;
                 }
-
+                Console.WriteLine("First Team");
+                Console.WriteLine("Name: "+a.name);
                 // show Inventory
                 printInventory(a);
 
@@ -252,7 +268,7 @@ namespace IntelligentAgents
                 ifTheCellHasEnergyTakeIt(m, a);
                 // if the cell has resorces save it to the inventory
                 ifTheMapHasResourcesTakeIt(m, a);
-                //a.checkIfAnotherAgentHasSamePosition(m.firstVillage.firstTeam, m.secondVillage.firstTeam, m.firstVillage.location);
+                a.checkIfAnotherAgentHasSamePosition(m.firstVillage.firstTeam, m.secondVillage.firstTeam, m.firstVillage.location);
             }
             return "";
         }
@@ -311,7 +327,7 @@ namespace IntelligentAgents
             if (FirstTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
 
             //for every Second Team Agent
-            if (SecondTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
+            //if (SecondTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
 
             // clear all the agent that they died
             v.secondTeam.RemoveAll(WhereAgentIsDead);

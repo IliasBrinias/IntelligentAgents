@@ -8,6 +8,7 @@ namespace IntelligentAgents
 {
     internal class Agent
     {
+        public String name { get; set; }
         public List<String> inventory { get; set; }
         public Boolean IsAlive { get; set; }
         public int energyPoint { get; set; }
@@ -17,19 +18,19 @@ namespace IntelligentAgents
 
         public int[] getCurrentPosition() {return new[] { currentX, currentY };}
 
-        private int energyPotMultiplier = 25;
+        public int energyPotMultiplier { get; set; }
 
         public Dictionary<int[], Boolean> discoveredAreas { get; set; }
 
         Random r;
-        public Agent(int[] location)
+        public Agent(String name, int[] location)
         {
+            this.name = name;
             inventory = new List<String>();
             IsAlive = true;
             this.currentX = location[0];
             this.currentY = location[1];
             r = new Random();
-            energyPoint = 50;
             discoveredAreas = new Dictionary<int[], bool>();
         }
         public int move()
