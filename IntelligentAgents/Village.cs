@@ -9,8 +9,8 @@ namespace IntelligentAgents
     internal class Village
     {
         Random r;
-        public readonly int goalWood = 5;
-        public readonly int goalIron = 15;
+        public readonly int goalWood = 15;
+        public readonly int goalIron = 8;
         public readonly int goalCereal = 4;
         public readonly int goalGold = 10;
 
@@ -37,19 +37,20 @@ namespace IntelligentAgents
             currentIron = 0;
             currentWood = 0;
         }
-        public void getStatus()
-        {
-
-            Console.WriteLine("Wood: " + currentWood + ", Iron: " + currentIron + ", Cereal: " + currentCereal + ", Gold: " + currentGold);
-        }
         public void generateAgents(int K, int M, int X, int Y)
         {
             // Generates Agents
             for (int j = 0; j < K; j++)
             {
-                firstTeam.Add(new FirstTeamAgent(name+"F"+j,location, M, X, Y, Constants.getRandomResources(r.Next())));
-                secondTeam.Add(new SecondTeamAgent(name + "F" + j, this.location, M));
+                firstTeam.Add(new FirstTeamAgent(name + "F" + j, location, M, X, Y, Constants.getRandomResources(r.Next())));
+                secondTeam.Add(new SecondTeamAgent(name + "S" + j, this.location, M));
             }
+        }
+
+        public void getStatus()
+        {
+
+            Console.WriteLine("Wood: " + currentWood + ", Iron: " + currentIron + ", Cereal: " + currentCereal + ", Gold: " + currentGold);
         }
         public List<String> addResources(List<String> resources)
         {

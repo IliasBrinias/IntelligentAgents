@@ -8,40 +8,71 @@ namespace IntelligentAgents
 {
     public class Program
     {
+        static List<Agent> deadAgents = new List<Agent>();
         static bool isOver = false;
+        private static void printList(List<int[]> ints)
+        {
+            foreach (int[] i in ints){
+                Console.WriteLine("(" + i[0] + "," + i[1] + ")");
+            }
+        }
         static void Main() {
             // N, M dim N,M>100x100
             // K agents
             // P how many pots
             // X Energy Pot value
             // Y Map Cost
-            int N = 100;
-            int M = 100;
-            int K = 5;
-            int Υ = 2;
-            int X = 1;
+            Console.WriteLine("~ Intelligent Agents");
+            int N = userInput("Enter the N Dimension (N>=100) :",100);
+            int M = userInput("Enter the M Dimension (M>=100) :", 100);
+            int K = userInput("Enter the number of agents for every team (5 <= agents <= 10) :",5,10);
+            int Υ = userInput("Enter the value of map (1 <= cost <= 3) :", 1, 3);
+            int X = userInput("Enter the value of Potion (1 <= cost <= 3) :", 1, 3);
             double P = 0.2;
-            Map m = new Map(N, M, P, K, X, Υ);
-            
-            String[,] map = m.map;
-            Dictionary<int, int> agentLocation = new Dictionary<int, int>();
-            showStage(m);
+            Map m = new Map(N, M, P, K, X, Υ);            
+            // run until any village win
             while (!isOver) {
                 Console.WriteLine(" Start Loop ----------------------------------------------------");
+                // first village
                 Console.WriteLine("!! First Village");
                 checkResults(villagesAgents(m, m.firstVillage), "First Village");
-                if (isOver) continue;
+                if (isOver)  break;
+                // second village
                 Console.WriteLine("!! Second Village");
+                checkResults(villagesAgents(m, m.secondVillage), "Second Village");
+                if (isOver) break;
 
-                //checkResults(villagesAgents(m, m.secondVillage), "Second Village");
-                //if (isOver) continue;
-
-                m.firstVillage.getStatus();
-                //m.secondVillage.getStatus();
                 showStage(m);
                 Console.WriteLine(" Finish Loop ----------------------------------------------------");
 
             }
+            ConsoleMessages.showAgentHistory(m);
+            ConsoleMessages.showDeadAgentHistory(deadAgents);
+            m.firstVillage.getStatus();
+            m.secondVillage.getStatus();
+
+        }
+        private static int userInput(String msg, int min)
+        {
+            int op = 0;
+            string input;
+            do
+            {
+                Console.WriteLine(msg);
+                input = Console.ReadLine();
+            } while (!int.TryParse(input, out op) || op<min);
+            return op;
+        }
+        private static int userInput(String msg, int min, int max)
+        {
+            int op = 0;
+            string input;
+            do
+            {
+                Console.WriteLine(msg);
+                input = Console.ReadLine();
+            } while (!int.TryParse(input, out op) || (op < min && op > max));
+            return op;
         }
         private static void printDic(Dictionary<int,Object> data)
         {
@@ -80,11 +111,7 @@ namespace IntelligentAgents
             //for every Second Team Agent
             foreach (SecondTeamAgent a in v.secondTeam)
             {
-                //check if is alive
-                if (!a.IsAlive)
-                {
-                    continue;
-                }
+                
                 Console.WriteLine("Second Team");
 
                 // get the cells that the agent can move base on step
@@ -100,6 +127,8 @@ namespace IntelligentAgents
                         // when he is in Village add the Resource that he carried
                         v.addResources(a.inventory);
                         a.inventory.Clear();
+                        a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " arrived to Village");
+
                         // check if the Village is ok
                         if (v.checkIfIsOver())
                         {
@@ -113,6 +142,12 @@ namespace IntelligentAgents
                         {
                             a.increaseEnergy();
                             m.map[a.currentX, a.currentY] = Constants.NOTHING;
+                            a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " found energy on the way back to village");
+
+                        }
+                        else
+                        {
+                            a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " return to Village");
                         }
                     }
                     continue;
@@ -127,10 +162,14 @@ namespace IntelligentAgents
                     if(m.map[a.currentX, a.currentY].Equals(Constants.ENERGY_POTS)){
                         // if the cell has energy pot increase energy to the agent
                         a.increaseEnergy();
-                        m.map[a.currentX, a.currentY] = Constants.NOTHING;
-                        continue;
+                        a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " found energy");
                     }
-                    a.inventory.Add(m.map[a.currentX, a.currentY]);
+                    else
+                    {
+                        a.inventory.Add(m.map[a.currentX, a.currentY]);
+                        a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " found resource " + m.map[a.currentX, a.currentY]);
+
+                    }
                     m.map[a.currentX, a.currentY] = Constants.NOTHING;
                 }
             }
@@ -163,11 +202,7 @@ namespace IntelligentAgents
         {
             foreach (FirstTeamAgent a in v.firstTeam)
             {
-                //check if is alive
-                if (!a.IsAlive)
-                {
-                    continue;
-                }
+                
                 Console.WriteLine("First Team");
                 Console.WriteLine("Name: "+a.name);
                 // show Inventory
@@ -195,6 +230,10 @@ namespace IntelligentAgents
                             {
                                 a.removeDiscoveredEnergy(newPositionForEnergy);
                             }
+                            else
+                            {
+                                a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " searching for energy, going to " + "(" + newPositionForEnergy[0] +","+ newPositionForEnergy[1] + ")");
+                            }
                         }
                         else
                         {
@@ -207,13 +246,24 @@ namespace IntelligentAgents
                         {
                             // use the posion
                             a.ifHasPosionUseIt();
+                            a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " energy found at " + "(" + newPositionForEnergy[0] + "," + newPositionForEnergy[1] + ")");
+
                         }
                         else
                         {
                             // if he has resources save it to the inventory
-                            ifTheMapHasResourcesTakeIt(m, a);
+                            if(ifTheMapHasResourcesTakeIt(m, a))
+                            {
+                                a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " resources found at " + "(" + newPositionForEnergy[0] + "," + newPositionForEnergy[1] + ")");
+                            }
                         }
+                        a.checkIfAnotherAgentHasSamePosition(m.firstVillage.firstTeam, m.secondVillage.firstTeam, m.firstVillage.location);
+
                         continue;
+                    }
+                    else
+                    {
+                        a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " used a potion from inventory");
                     }
 
                 }
@@ -225,6 +275,8 @@ namespace IntelligentAgents
                     //retund to Village
                     if (a.returnToVillage(v.location, nearbyCells))
                     {
+                        a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " arrived at Village with inventory items");
+
                         Console.WriteLine("Arrived to Village");
                         
                         // when he is in Village add the Resource that he carried and
@@ -240,9 +292,19 @@ namespace IntelligentAgents
                     }
                     else
                     {
-                        ifTheMapHasResourcesTakeIt(m, a);
-                        ifTheCellHasEnergyTakeIt(m, a);
+                        if (ifTheMapHasResourcesTakeIt(m, a))
+                        {
+                            a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " resources found");
+
+                        }
+                        if(ifTheCellHasEnergyTakeIt(m, a))
+                        {
+                            a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " energy found");
+
+                        }
                     }
+                    a.checkIfAnotherAgentHasSamePosition(m.firstVillage.firstTeam, m.secondVillage.firstTeam, m.firstVillage.location);
+
                     continue;
                 }
                 // if he has enough energy check if he has any discovered resources 
@@ -255,7 +317,6 @@ namespace IntelligentAgents
                     {
                         a.removeResourceFromDiscoveredResources(newPosition);
                     }
-                    
                 }
                 else
                 {
@@ -265,9 +326,15 @@ namespace IntelligentAgents
 
                 }
                 // if the cell has energy pot save it to the inventory
-                ifTheCellHasEnergyTakeIt(m, a);
+                if (ifTheCellHasEnergyTakeIt(m, a))
+                {
+                    a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " agent found energy and save to inventory");
+                }
                 // if the cell has resorces save it to the inventory
-                ifTheMapHasResourcesTakeIt(m, a);
+                if (ifTheMapHasResourcesTakeIt(m, a))
+                {
+                    a.history.Add("(" + a.currentX + "," + a.currentY + ")" + " resources found");
+                }
                 a.checkIfAnotherAgentHasSamePosition(m.firstVillage.firstTeam, m.secondVillage.firstTeam, m.firstVillage.location);
             }
             return "";
@@ -300,7 +367,7 @@ namespace IntelligentAgents
             }
 
         }
-        private static void ifTheMapHasResourcesTakeIt(Map m, FirstTeamAgent a)
+        private static bool ifTheMapHasResourcesTakeIt(Map m, FirstTeamAgent a)
         {
 
             // chech if the current position has any resources
@@ -318,7 +385,9 @@ namespace IntelligentAgents
                 m.map[a.currentX, a.currentY] = Constants.NOTHING;
                 // remove the resource if it was discovered
                 a.removeResourceFromDiscoveredResources(new int[] { a.currentX, a.currentY });
+                return true;
             }
+            return false;
 
         }
         private static String villagesAgents(Map m, Village v)
@@ -327,7 +396,7 @@ namespace IntelligentAgents
             if (FirstTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
 
             //for every Second Team Agent
-            //if (SecondTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
+            if (SecondTeam(m, v).Equals(Constants.VILLAGE_WIN)) return Constants.VILLAGE_WIN;
 
             // clear all the agent that they died
             v.secondTeam.RemoveAll(WhereAgentIsDead);
@@ -340,6 +409,17 @@ namespace IntelligentAgents
             }
             return "";
         }
+        // Search predicate returns true if the agent is dead.
+        private static bool WhereAgentIsDead(Agent a)
+        {
+            if (!a.IsAlive)
+            {
+                a.history.Add("Agent Died");
+                deadAgents.Add(a);
+            }
+            return !a.IsAlive;
+        }
+
         private static void showStage(Map m)
         {
             Dictionary<int, int> agentLocation = new Dictionary<int, int>();
@@ -363,11 +443,6 @@ namespace IntelligentAgents
             ConsoleMessages.printBoard(m.map,agentLocation);
 
 
-        }
-        // Search predicate returns true if the agent is dead.
-        private static bool WhereAgentIsDead(Agent a)
-        {
-            return a.IsAlive == false;
         }
 
     }

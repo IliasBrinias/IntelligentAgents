@@ -46,5 +46,66 @@ namespace IntelligentAgents
             }
             Console.WriteLine("-----------------");
         }
+
+        internal static void showDeadAgentHistory(List<Agent> deadAgents)
+        {
+            Console.WriteLine("-- History of dead agents");
+            foreach (Agent a in deadAgents)
+            {
+                Console.WriteLine("-- " + a.name);
+                foreach (String s in a.history)
+                {
+                    Console.WriteLine(s);
+
+                }
+
+            }
+        }
+
+        public static void showAgentHistory(Map m)
+        {
+            Console.WriteLine("-- History of agents");
+            foreach (FirstTeamAgent a in m.firstVillage.firstTeam)
+            {
+                Console.WriteLine("-- " + a.name);
+                foreach (String s in a.history)
+                {
+                    Console.WriteLine(s);
+
+                }
+
+            }
+            foreach (SecondTeamAgent a in m.firstVillage.secondTeam)
+            {
+                Console.WriteLine("-- " + a.name);
+                foreach (String s in a.history)
+                {
+                    Console.WriteLine(s);
+
+                }
+
+            }
+            foreach (FirstTeamAgent a in m.secondVillage.firstTeam)
+            {
+                Console.WriteLine("-- " + a.name);
+                foreach (String s in a.history)
+                {
+                    Console.WriteLine(s);
+
+                }
+
+            }
+            foreach (SecondTeamAgent a in m.secondVillage.secondTeam)
+            {
+                Console.WriteLine("-- " + a.name);
+                foreach (String s in a.history)
+                {
+                    Console.WriteLine(s);
+
+                }
+
+            }
+
+        }
     }
 }

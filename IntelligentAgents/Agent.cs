@@ -8,30 +8,25 @@ namespace IntelligentAgents
 {
     internal class Agent
     {
+        public List<String> history { get; set; }
         public String name { get; set; }
         public List<String> inventory { get; set; }
         public Boolean IsAlive { get; set; }
         public int energyPoint { get; set; }
-
         public int currentX { get; set; }
         public int currentY { get; set; }
-
         public int[] getCurrentPosition() {return new[] { currentX, currentY };}
-
         public int energyPotMultiplier { get; set; }
-
-        public Dictionary<int[], Boolean> discoveredAreas { get; set; }
-
         Random r;
         public Agent(String name, int[] location)
         {
+            history = new List<string>();
             this.name = name;
             inventory = new List<String>();
             IsAlive = true;
             this.currentX = location[0];
             this.currentY = location[1];
             r = new Random();
-            discoveredAreas = new Dictionary<int[], bool>();
         }
         public int move()
         {
@@ -126,6 +121,5 @@ namespace IntelligentAgents
             Console.WriteLine("Energy increced from :" + energyPoint + " To: " + (energyPoint + energyPotMultiplier));
             energyPoint += energyPotMultiplier;
         }
-
     }
 }

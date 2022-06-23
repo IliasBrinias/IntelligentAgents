@@ -310,6 +310,7 @@ namespace IntelligentAgents
             if (sameLocAgentEnemyVill.Count == 0) return;
             
             int resourcesForTrading = countResourcesForTrade();
+            history.Add("(" + currentX + "," + currentY + ")" + " agent found another enemy agent");
             // if he hasnt resources to trade dont request
             if (resourcesForTrading < mapValue && resourcesForTrading < potValue) return;
 
@@ -348,9 +349,10 @@ namespace IntelligentAgents
                 transferPotsTo(enemyAgent, potValue);
                 // get one Pot
                 inventory.Add(enemyAgent.getPot());
+                history.Add("(" + currentX + "," + currentY + ")" + " agent pay and get enemy pot");
+                return;
             }
-            Console.WriteLine(name + " pot declined");
-
+            history.Add("(" + currentX + "," + currentY + ")" + " enemy decline the request for the pot");
         }
 
         private void transferPotsTo(FirstTeamAgent enemyAgent, int count)
@@ -386,10 +388,13 @@ namespace IntelligentAgents
                 // get Compine Map
                 discoveredAreas = compineData(enemyAgent.discoveredAreas, this.discoveredAreas);
                 Console.WriteLine(name + " map is updated");
+                history.Add("(" + currentX + "," + currentY + ")" + " agent pay and get enemy map");
 
                 return;
             }
             Console.WriteLine(enemyAgent.name + " declined");
+            history.Add("(" + currentX + "," + currentY + ")" + " enemy decline the request for the map");
+
 
         }
 
@@ -471,7 +476,8 @@ namespace IntelligentAgents
             foreach(int idx in sameLocAgentSameVill)
             {
                 if (aSameVillage[idx].name.Equals(name)) continue;
-                Console.WriteLine("Exchange Knoledge");
+                Console.WriteLine("Exchange Knoledge between "+name+" - "+ aSameVillage[idx].name);
+                history.Add("(" + currentX + "," + currentY + ")" + " found playmate "+ aSameVillage[idx].name+ " and exchange discivered Areas, Energy and pot");
 
                 // update their discover Areas
                 Dictionary<int, Object> data = compineData(discoveredAreas, aSameVillage[idx].discoveredAreas);
@@ -479,11 +485,14 @@ namespace IntelligentAgents
                 aSameVillage[idx].discoveredAreas = data;
                 Console.WriteLine("Discovered Area compinded");
 
-                // compine discover Resources
-                List<int[]> compineListResources =  compineLists(discoveredResources, aSameVillage[idx].discoveredResources);
-                discoveredResources = compineListResources;
-                aSameVillage[idx].discoveredResources = compineListResources;
-                Console.WriteLine("List Resources compinded");
+                if (aSameVillage[idx].qualify.Equals(qualify))
+                {
+                    // compine discover Resources
+                    List<int[]> compineListResources = compineLists(discoveredResources, aSameVillage[idx].discoveredResources);
+                    discoveredResources = compineListResources;
+                    aSameVillage[idx].discoveredResources = compineListResources;
+                    Console.WriteLine("List Resources compinded");
+                }
 
                 // compine discover Energy
                 List<int[]> compineListEnergy=  compineLists(discoveredEnergy, aSameVillage[idx].discoveredEnergy);
@@ -502,10 +511,6 @@ namespace IntelligentAgents
 
         public static List<int[]> compineLists(List<int[]> list, List<int[]> list1)
         {
-            if (list.Count > 0 || list1.Count>0)
-            {
-                int x = 8;
-            }
             List<int[]> result = new List<int[]>();
             result.AddRange(list);
             foreach (int[] l1 in list1)
@@ -513,12 +518,12 @@ namespace IntelligentAgents
                 bool exists = false;
                 foreach (int[] l in list)
                 {
-                    if (l[0] != l1[0] || l[1] != l1[1])
+                    if (l[0] == l1[0] && l[1] == l1[1])
                     {
                         exists = true;
                     }
                 }
-                if (exists)
+                if (!exists)
                 {
                     result.Add(l1);
                 }

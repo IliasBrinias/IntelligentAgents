@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IntelligentAgents.ConsoleMessages" Collapsed="true">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ConsoleMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.Agent" Collapsed="true">
+    <Position X="6" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAACAAAAAAQBAiAAAAAAAIAAAAEAAACCAGBgAAQAkA=</HashCode>
+      <FileName>Agent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.Constants" Collapsed="true">
+    <Position X="13.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAAAACIgAAAIAAAgAAAAAIAAAAAABAAEAAAAAgAA=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.FirstTeamAgent">
+    <Position X="6.75" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>SAACIAEAAEABCCBQCAAgGAoBENAsACHARCgBQIEARQA=</HashCode>
+      <FileName>FirstTeamAgent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.Map">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAACAAAAhAAAAgAEACAAAIAQACAAAAABABYAEQA=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.Program" Collapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAACEAAIEAoEAQAAgAAAABICAAIA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.SecondTeamAgent" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>SecontTeamAgent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntelligentAgents.Village" Collapsed="true">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACAAAAAAEAAgAQIBBAAIAACCAAEBAAEAACBSAgACAg=</HashCode>
+      <FileName>Village.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

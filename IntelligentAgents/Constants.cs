@@ -13,11 +13,12 @@ namespace IntelligentAgents
         public static String GOLD = "G";
         public static String CEREALS = "C";
         public static String NOTHING = " ";
+        public static String Village = "V";
         public static String ENERGY_POTS = "E";
+
         public static String NO_CARRY = "NC";
         public static String AGIENTS_DIED = "AD";
         public static String VILLAGE_WIN = "VW";
-        public static String Village = "V";
 
         public static String getRandomResources(int index)
         {

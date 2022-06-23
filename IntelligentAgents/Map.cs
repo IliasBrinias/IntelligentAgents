@@ -54,7 +54,6 @@ namespace IntelligentAgents
                 int randomIndex = r.Next(0, locations.Count);
                 int[] loacationIndex = locations[randomIndex];
                 map[loacationIndex[0], loacationIndex[1]] = Constants.ENERGY_POTS;
-                //map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources(r.Next());
                 locations.RemoveAt(randomIndex);
             }
 
@@ -66,7 +65,6 @@ namespace IntelligentAgents
             {
                 int randomIndex = r.Next(0, locations.Count);
                 int[] loacationIndex = locations[randomIndex];
-                //map[loacationIndex[0], loacationIndex[1]] = Constants.CEREALS;
                 map[loacationIndex[0], loacationIndex[1]] = Constants.getRandomResources(r.Next());
                 locations.RemoveAt(randomIndex);
             }
