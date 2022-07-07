@@ -10,6 +10,7 @@ namespace IntelligentAgents
     {
         static List<Agent> deadAgents = new List<Agent>();
         static bool isOver = false;
+        static List<String[,]> mapHistory = new List<string[,]>();
         private static void printList(List<int[]> ints)
         {
             foreach (int[] i in ints){
@@ -29,8 +30,10 @@ namespace IntelligentAgents
             int Υ = userInput("Enter the value of map (1 <= cost <= 3) :", 1, 3);
             int X = userInput("Enter the value of Potion (1 <= cost <= 3) :", 1, 3);
             double P = 0.2;
-            Map m = new Map(N, M, P, K, X, Υ);            
+            Map m = new Map(N, M, P, K, X, Υ);
             // run until any village win
+            int loop = 0;
+            ConsoleMessages.clearDataFile("mapHistory");
             while (!isOver) {
                 Console.WriteLine(" Start Loop ----------------------------------------------------");
                 // first village
@@ -41,10 +44,10 @@ namespace IntelligentAgents
                 Console.WriteLine("!! Second Village");
                 checkResults(villagesAgents(m, m.secondVillage), "Second Village");
                 if (isOver) break;
-
-                showStage(m);
+                loop += 1;
+                showStage(m, loop);
                 Console.WriteLine(" Finish Loop ----------------------------------------------------");
-
+                mapHistory.Append(m.map);
             }
             ConsoleMessages.showAgentHistory(m);
             ConsoleMessages.showDeadAgentHistory(deadAgents);
@@ -420,7 +423,7 @@ namespace IntelligentAgents
             return !a.IsAlive;
         }
 
-        private static void showStage(Map m)
+        private static void showStage(Map m,int loop)
         {
             Dictionary<int, int> agentLocation = new Dictionary<int, int>();
             foreach(Agent a in m.firstVillage.firstTeam){
@@ -440,8 +443,7 @@ namespace IntelligentAgents
                 if (agentLocation.ContainsKey(a.currentX)) continue;
                 agentLocation.Add(a.currentX, a.currentY);
             }
-            ConsoleMessages.printBoard(m.map,agentLocation);
-
+            ConsoleMessages.appendDataToFile("mapHistory", m.map, agentLocation, loop);
 
         }
 

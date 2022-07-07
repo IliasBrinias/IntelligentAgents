@@ -8,9 +8,9 @@ namespace IntelligentAgents
 {
     internal class ConsoleMessages
     {
-        public static void printBoard(String[,] board, Dictionary<int,int> agentsLocations)
+        public static StringBuilder printBoard(String[,] board, Dictionary<int,int> agentsLocations)
         {
-
+            StringBuilder lines = new StringBuilder();
             Console.WriteLine("-----------------");
             for(int i=0; i<board.GetLength(0);i++)
             {
@@ -43,69 +43,122 @@ namespace IntelligentAgents
                     stringBuilder.Append(",");
                 }
                 Console.WriteLine(stringBuilder);
+                lines.AppendLine(stringBuilder.ToString());
             }
             Console.WriteLine("-----------------");
+            return lines;
         }
 
         internal static void showDeadAgentHistory(List<Agent> deadAgents)
         {
-            Console.WriteLine("-- History of dead agents");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("-- History of dead agents");
             foreach (Agent a in deadAgents)
             {
-                Console.WriteLine("-- " + a.name);
+                sb.AppendLine("-- " + a.name);
                 foreach (String s in a.history)
                 {
-                    Console.WriteLine(s);
-
+                    sb.AppendLine(s);
                 }
-
             }
+            saveDataToFile("DeadAgentHistory", sb);
         }
-
+        
         public static void showAgentHistory(Map m)
         {
-            Console.WriteLine("-- History of agents");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("-- History of agents");
             foreach (FirstTeamAgent a in m.firstVillage.firstTeam)
             {
-                Console.WriteLine("-- " + a.name);
+                sb.AppendLine("-- " + a.name);
                 foreach (String s in a.history)
                 {
-                    Console.WriteLine(s);
+                    sb.AppendLine(s);
 
                 }
 
             }
             foreach (SecondTeamAgent a in m.firstVillage.secondTeam)
             {
-                Console.WriteLine("-- " + a.name);
+                sb.AppendLine("-- " + a.name);
                 foreach (String s in a.history)
                 {
-                    Console.WriteLine(s);
+                    sb.AppendLine(s);
 
                 }
 
             }
             foreach (FirstTeamAgent a in m.secondVillage.firstTeam)
             {
-                Console.WriteLine("-- " + a.name);
+                sb.AppendLine("-- " + a.name);
                 foreach (String s in a.history)
                 {
-                    Console.WriteLine(s);
+                    sb.AppendLine(s);
 
                 }
 
             }
             foreach (SecondTeamAgent a in m.secondVillage.secondTeam)
             {
-                Console.WriteLine("-- " + a.name);
+                sb.AppendLine("-- " + a.name);
                 foreach (String s in a.history)
                 {
-                    Console.WriteLine(s);
+                    sb.AppendLine(s);
 
                 }
 
             }
+            saveDataToFile("AgentHistory", sb);
+        }
+        private static void saveDataToFile(String fileName,StringBuilder sb)
+        {
+            clearDataFile(fileName);
+            try
+            {
+                Directory.CreateDirectory(".\\Logs");
+                //Pass the filepath and filename to the StreamWriter Constructor
+                StreamWriter sw = new StreamWriter(".\\Logs\\"+fileName+".txt");
+                string[] delim = { Environment.NewLine, "\n" };
+                foreach (String s in sb.ToString().Split(delim, StringSplitOptions.None))
+                {
+                    sw.WriteLine(s);
+                }
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+        }
+        public static void clearDataFile(String fileName)
+        {
+            System.IO.File.WriteAllText(".\\Logs\\" + fileName + ".txt", string.Empty);
+        }
+        public static void appendDataToFile(String fileName, String[,] board, Dictionary<int, int> agentsLocations, int loop)
+        {
+            try
+            {
+                Directory.CreateDirectory(".\\Logs");
+                //Pass the filepath and filename to the StreamWriter Constructor
+    
+                string[] delim = { Environment.NewLine, "\n" };
+               
+                using (StreamWriter w = File.AppendText(".\\Logs\\" + fileName + ".txt"))
+                {
+                    w.WriteLine("-----------------");
+                    w.WriteLine("Loop: "+loop);
+                    foreach(String s in printBoard(board, agentsLocations).ToString().Split(delim, StringSplitOptions.None))
+                    {
+                        w.WriteLine(s);
+                    }
+                    w.WriteLine("-----------------");
 
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
         }
     }
 }
