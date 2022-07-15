@@ -1,0 +1,1003 @@
+-- History of agents
+-- FF0
+(0,2) agent found energy and save to inventory
+(1,2) resources found
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(1,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,0) found playmate FF2 and exchange discivered Areas, Energy and pot
+(6,2) resources found
+(1,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(1,0) used a potion from inventory
+(12,0) resources found
+(8,0) found playmate FF4 and exchange discivered Areas, Energy and pot
+(3,0) found playmate FF6 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(3,0) searching for energy, going to (6,10)
+(4,0) searching for energy, going to (6,10)
+(5,0) searching for energy, going to (6,10)
+(7,0) searching for energy, going to (6,10)
+(6,0) searching for energy, going to (6,10)
+(6,2) searching for energy, going to (6,10)
+(6,4) searching for energy, going to (6,10)
+(8,4) searching for energy, going to (9,6)
+(10,4) searching for energy, going to (9,6)
+(8,4) searching for energy, going to (9,6)
+(9,4) searching for energy, going to (9,6)
+(8,6) searching for energy, going to (5,4)
+-- FF1
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(2,2) resources found
+(0,0) arrived at Village with inventory items
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,5) agent found energy and save to inventory
+(3,5) resources found
+(0,0) arrived at Village with inventory items
+(4,1) used a potion from inventory
+(7,5) agent found energy and save to inventory
+(10,5) agent found energy and save to inventory
+(11,1) agent found energy and save to inventory
+(14,1) resources found
+(3,1) used a potion from inventory
+(0,0) arrived at Village with inventory items
+(7,0) found playmate FF2 and exchange discivered Areas, Energy and pot
+(13,0) resources found
+-- FF2
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,1) resources found
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF1 and exchange discivered Areas, Energy and pot
+(3,0) found playmate FF0 and exchange discivered Areas, Energy and pot
+(8,4) resources found
+(5,4) found playmate FF8 and exchange discivered Areas, Energy and pot
+(5,4) used a potion from inventory
+(0,1) found playmate FF3 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(4,3) found playmate FF3 and exchange discivered Areas, Energy and pot
+(11,8) resources found
+(8,8) searching for energy, going to (7,0)
+(7,8) searching for energy, going to (7,0)
+(7,7) searching for energy, going to (7,0)
+(7,5) searching for energy, going to (7,0)
+(7,4) searching for energy, going to (7,0)
+(7,2) searching for energy, going to (7,0)
+(7,0) used a potion from inventory
+(0,0) arrived at Village with inventory items
+-- FF3
+(2,0) resources found
+(1,0) resources found
+(0,0) arrived at Village with inventory items
+(6,0) agent found energy and save to inventory
+(5,11) resources found
+(3,11) energy found
+(1,11) energy found
+(0,11) resources found
+(0,8) resources found
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,1) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,1) used a potion from inventory
+(2,1) found playmate FF0 and exchange discivered Areas, Energy and pot
+(3,1) resources found
+(3,1) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(4,8) resources found
+(0,1) used a potion from inventory
+(0,0) arrived at Village with inventory items
+-- FF4
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,0) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,1) found playmate FF2 and exchange discivered Areas, Energy and pot
+(3,1) found playmate FF2 and exchange discivered Areas, Energy and pot
+(3,3) found playmate FF8 and exchange discivered Areas, Energy and pot
+(3,5) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,4) resources found
+(0,4) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(3,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(4,1) found playmate FF1 and exchange discivered Areas, Energy and pot
+(5,1) searching for energy, going to (6,10)
+(6,1) searching for energy, going to (6,10)
+(6,1) resources found at (6,10)
+(6,2) searching for energy, going to (6,10)
+(6,4) searching for energy, going to (6,10)
+(6,6) searching for energy, going to (6,10)
+(6,7) searching for energy, going to (6,10)
+(6,9) searching for energy, going to (6,10)
+(6,9) resources found at (6,10)
+(7,10) searching for energy, going to (7,0)
+(7,8) searching for energy, going to (7,0)
+(7,7) searching for energy, going to (7,0)
+(7,7) resources found at (7,0)
+(7,5) searching for energy, going to (7,0)
+(7,4) searching for energy, going to (7,0)
+(7,3) searching for energy, going to (7,0)
+(7,2) searching for energy, going to (7,0)
+(7,1) searching for energy, going to (7,0)
+(7,1) found playmate FF8 and exchange discivered Areas, Energy and pot
+(8,0) searching for energy, going to (9,6)
+(9,0) searching for energy, going to (9,6)
+(9,1) searching for energy, going to (9,6)
+(9,3) searching for energy, going to (9,6)
+(9,4) searching for energy, going to (9,6)
+(9,6) energy found at (9,6)
+(6,6) searching for energy, going to (5,10)
+(5,6) searching for energy, going to (5,10)
+(5,7) searching for energy, going to (5,10)
+(5,9) searching for energy, going to (5,10)
+(7,10) searching for energy, going to (6,10)
+(5,10) searching for energy, going to (6,10)
+(7,10) searching for energy, going to (6,10)
+(5,10) searching for energy, going to (6,10)
+(7,10) searching for energy, going to (6,10)
+(4,10) searching for energy, going to (5,4)
+(5,10) searching for energy, going to (5,4)
+-- FF5
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,0) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,0) found playmate FF4 and exchange discivered Areas, Energy and pot
+(7,3) resources found
+(0,1) found playmate FF3 and exchange discivered Areas, Energy and pot
+(0,1) used a potion from inventory
+(0,0) arrived at Village with inventory items
+(2,8) resources found
+(0,4) found playmate FF6 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF6 and exchange discivered Areas, Energy and pot
+(2,7) searching for energy, going to (7,0)
+(3,7) searching for energy, going to (7,0)
+(4,7) searching for energy, going to (7,0)
+(6,7) searching for energy, going to (7,0)
+(7,7) searching for energy, going to (7,0)
+(7,5) searching for energy, going to (7,0)
+(7,3) searching for energy, going to (7,0)
+(7,1) searching for energy, going to (7,0)
+(9,0) searching for energy, going to (9,6)
+(9,1) searching for energy, going to (9,6)
+(9,3) searching for energy, going to (9,6)
+(9,4) searching for energy, going to (9,6)
+-- FF6
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(4,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(6,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(7,6) resources found
+(0,3) found playmate FF8 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF8 and exchange discivered Areas, Energy and pot
+(5,3) found playmate FF8 and exchange discivered Areas, Energy and pot
+(5,4) found playmate FF2 and exchange discivered Areas, Energy and pot
+(5,4) found playmate FF8 and exchange discivered Areas, Energy and pot
+(6,4) searching for energy, going to (6,10)
+(6,5) searching for energy, going to (6,10)
+(6,5) found playmate FF8 and exchange discivered Areas, Energy and pot
+(6,6) searching for energy, going to (6,10)
+(6,8) searching for energy, going to (6,10)
+(6,10) energy found at (6,10)
+(4,11) resources found
+(2,11) resources found
+(0,0) arrived at Village with inventory items
+(7,2) searching for energy, going to (6,10)
+(6,2) searching for energy, going to (6,10)
+(6,3) searching for energy, going to (6,10)
+(6,5) searching for energy, going to (6,10)
+(6,6) searching for energy, going to (6,10)
+(6,8) searching for energy, going to (6,10)
+(8,10) searching for energy, going to (9,6)
+(10,10) searching for energy, going to (9,6)
+(10,10) energy found at (9,6)
+(8,14) resources found
+-- FF8
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF6 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF7 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF6 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF7 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF6 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF7 and exchange discivered Areas, Energy and pot
+(4,2) resources found
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,0) found playmate FF2 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF2 and exchange discivered Areas, Energy and pot
+(6,3) resources found
+(5,3) energy found
+(0,0) arrived at Village with inventory items
+(5,4) agent found energy and save to inventory
+(5,5) used a potion from inventory
+(6,5) resources found
+(0,2) found playmate FF3 and exchange discivered Areas, Energy and pot
+(0,1) found playmate FF2 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(9,4) resources found
+(7,4) resources found
+(1,4) searching for energy, going to (9,6)
+(2,4) searching for energy, going to (9,6)
+(3,4) searching for energy, going to (9,6)
+(5,4) searching for energy, going to (9,6)
+(6,4) searching for energy, going to (9,6)
+(8,4) searching for energy, going to (9,6)
+(10,4) searching for energy, going to (9,6)
+(8,4) searching for energy, going to (9,6)
+(8,4) found playmate FF0 and exchange discivered Areas, Energy and pot
+(10,4) searching for energy, going to (9,6)
+(10,4) found playmate FF0 and exchange discivered Areas, Energy and pot
+(8,4) searching for energy, going to (9,6)
+(8,4) found playmate FF0 and exchange discivered Areas, Energy and pot
+(9,4) searching for energy, going to (9,6)
+(9,4) found playmate FF0 and exchange discivered Areas, Energy and pot
+(9,6) found playmate FF0 and exchange discivered Areas, Energy and pot
+(8,6) searching for energy, going to (5,4)
+(8,6) found playmate FF0 and exchange discivered Areas, Energy and pot
+-- FF9
+(0,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF6 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF7 and exchange discivered Areas, Energy and pot
+(0,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF0 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF2 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF6 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF7 and exchange discivered Areas, Energy and pot
+(1,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF6 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF7 and exchange discivered Areas, Energy and pot
+(2,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(4,2) found playmate FF8 and exchange discivered Areas, Energy and pot
+(4,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(4,0) found playmate FF6 and exchange discivered Areas, Energy and pot
+(6,0) found playmate FF3 and exchange discivered Areas, Energy and pot
+(6,0) found playmate FF6 and exchange discivered Areas, Energy and pot
+(8,0) found playmate FF6 and exchange discivered Areas, Energy and pot
+(10,0) resources found
+(6,0) found playmate FF8 and exchange discivered Areas, Energy and pot
+(5,0) energy found
+(2,0) found playmate FF5 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(4,1) resources found
+(1,1) found playmate FF7 and exchange discivered Areas, Energy and pot
+(0,0) arrived at Village with inventory items
+(0,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(0,0) found playmate FF4 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(2,0) found playmate FF4 and exchange discivered Areas, Energy and pot
+(3,0) found playmate FF1 and exchange discivered Areas, Energy and pot
+(3,0) found playmate FF4 and exchange discivered Areas, Energy and pot
+(3,1) found playmate FF4 and exchange discivered Areas, Energy and pot
+(4,1) found playmate FF1 and exchange discivered Areas, Energy and pot
+(4,1) found playmate FF4 and exchange discivered Areas, Energy and pot
+(4,1) used a potion from inventory
+(4,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(5,2) found playmate FF1 and exchange discivered Areas, Energy and pot
+(6,2) found playmate FF4 and exchange discivered Areas, Energy and pot
+(8,2) resources found
+(0,0) arrived at Village with inventory items
+(5,7) resources found
+(1,7) found playmate FF5 and exchange discivered Areas, Energy and pot
+(2,7) searching for energy, going to (7,0)
+(2,7) found playmate FF5 and exchange discivered Areas, Energy and pot
+(3,7) searching for energy, going to (7,0)
+(3,7) found playmate FF5 and exchange discivered Areas, Energy and pot
+(4,7) searching for energy, going to (7,0)
+(4,7) found playmate FF5 and exchange discivered Areas, Energy and pot
+(6,7) searching for energy, going to (7,0)
+(6,7) found playmate FF5 and exchange discivered Areas, Energy and pot
+(7,7) searching for energy, going to (7,0)
+(7,7) found playmate FF5 and exchange discivered Areas, Energy and pot
+(7,5) searching for energy, going to (7,0)
+(7,5) found playmate FF5 and exchange discivered Areas, Energy and pot
+(7,3) searching for energy, going to (7,0)
+(7,3) found playmate FF5 and exchange discivered Areas, Energy and pot
+(7,1) searching for energy, going to (7,0)
+(7,1) found playmate FF5 and exchange discivered Areas, Energy and pot
+(9,1) searching for energy, going to (9,6)
+(9,3) searching for energy, going to (9,6)
+(9,4) searching for energy, going to (9,6)
+(9,4) found playmate FF0 and exchange discivered Areas, Energy and pot
+(9,4) found playmate FF8 and exchange discivered Areas, Energy and pot
+(7,4) searching for energy, going to (5,4)
+(6,4) searching for energy, going to (5,4)
+-- FS0
+(2,3) found resource W
+(0,3) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(0,5) found resource G
+(0,4) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(12,7) found resource G
+(10,7) return to Village
+(8,7) return to Village
+(7,7) return to Village
+(6,7) return to Village
+(5,7) return to Village
+(4,7) return to Village
+(2,7) return to Village
+(0,7) return to Village
+-- FS1
+(2,4) found resource W
+(1,4) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,0) arrived to Village
+(1,3) found resource C
+(0,3) return to Village
+(0,2) return to Village
+(0,0) arrived to Village
+(8,12) found energy
+(8,11) found resource I
+(6,11) return to Village
+(5,11) return to Village
+(3,11) return to Village
+(1,11) return to Village
+(0,11) return to Village
+(0,10) return to Village
+(0,9) return to Village
+(0,8) return to Village
+(0,6) return to Village
+(0,4) return to Village
+(0,3) return to Village
+(0,2) return to Village
+-- FS2
+(3,2) found resource C
+(2,2) return to Village
+(1,2) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(8,9) found energy
+(11,7) found resource C
+(10,7) return to Village
+(9,7) return to Village
+(7,7) return to Village
+(5,7) return to Village
+(4,7) return to Village
+(3,7) return to Village
+(2,7) return to Village
+(1,7) return to Village
+(0,7) return to Village
+(0,5) return to Village
+-- FS3
+(5,5) found resource W
+(3,5) return to Village
+(2,5) return to Village
+(1,5) return to Village
+(0,5) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(7,0) found energy
+(7,2) found resource G
+(5,2) return to Village
+(3,2) return to Village
+(1,2) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+-- FS4
+(2,6) found resource G
+(1,6) return to Village
+(0,6) return to Village
+(0,4) return to Village
+(0,3) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+-- FS5
+(1,6) found resource G
+(0,6) return to Village
+(0,5) return to Village
+(0,3) return to Village
+(0,2) return to Village
+(0,0) arrived to Village
+(5,10) found energy
+(8,10) found resource W
+(6,10) return to Village
+(4,10) return to Village
+(3,10) found energy on the way back to village
+(1,10) return to Village
+(0,10) return to Village
+(0,9) return to Village
+(0,7) return to Village
+(0,5) return to Village
+(0,4) return to Village
+(0,3) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+-- FS6
+(3,6) found resource G
+(1,6) return to Village
+(0,6) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(1,7) found resource G
+(0,7) return to Village
+(0,6) return to Village
+(0,5) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(1,9) found resource I
+(0,9) return to Village
+(0,8) return to Village
+(0,7) return to Village
+(0,6) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+-- FS7
+(5,6) found resource C
+(3,6) return to Village
+(1,6) return to Village
+(0,6) return to Village
+(0,5) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+(5,1) found resource C
+(3,1) return to Village
+(2,1) return to Village
+(1,1) return to Village
+(0,1) return to Village
+(0,0) arrived to Village
+-- FS8
+(6,8) found resource I
+(5,8) return to Village
+(3,8) return to Village
+(2,8) return to Village
+(0,8) return to Village
+(0,6) return to Village
+(0,4) return to Village
+(0,2) return to Village
+(0,0) arrived to Village
+-- FS9
+(6,7) found resource I
+(5,7) return to Village
+(3,7) found energy on the way back to village
+(1,7) return to Village
+(0,7) return to Village
+(0,5) return to Village
+(0,3) return to Village
+(0,2) return to Village
+(0,0) arrived to Village
+-- SF0
+(95,97) resources found
+(99,99) arrived at Village with inventory items
+(95,98) resources found
+(99,99) arrived at Village with inventory items
+(96,99) found playmate SF9 and exchange discivered Areas, Energy and pot
+(96,96) found playmate SF4 and exchange discivered Areas, Energy and pot
+(94,91) used a potion from inventory
+(94,92) agent found energy and save to inventory
+(93,90) agent found energy and save to inventory
+(92,89) agent found energy and save to inventory
+(92,87) resources found
+(93,87) resources found
+(99,90) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(97,99) used a potion from inventory
+(84,93) resources found
+-- SF1
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,93) agent found energy and save to inventory
+(95,93) resources found
+(99,99) arrived at Village with inventory items
+(96,95) resources found
+(99,98) found playmate SF8 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF8 and exchange discivered Areas, Energy and pot
+(98,95) used a potion from inventory
+(94,89) agent found energy and save to inventory
+(93,88) agent found energy and save to inventory
+(91,87) resources found
+(99,89) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,94) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) used a potion from inventory
+(90,89) agent found energy and save to inventory
+-- SF2
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(95,90) agent found energy and save to inventory
+(98,90) agent found energy and save to inventory
+(99,86) resources found
+(99,87) energy found
+(99,88) used a potion from inventory
+(99,89) resources found
+(99,90) energy found
+(99,95) found playmate SF7 and exchange discivered Areas, Energy and pot
+(99,96) found playmate SF9 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF9 and exchange discivered Areas, Energy and pot
+(99,98) found playmate SF9 and exchange discivered Areas, Energy and pot
+(99,90) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,90) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,89) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,89) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,83) used a potion from inventory
+(98,82) resources found
+(99,95) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+-- SF3
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(95,95) agent found energy and save to inventory
+(95,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(93,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(92,97) resources found
+(94,97) energy found
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF8 and exchange discivered Areas, Energy and pot
+(94,97) found playmate SF7 and exchange discivered Areas, Energy and pot
+(94,96) found playmate SF7 and exchange discivered Areas, Energy and pot
+(93,96) used a potion from inventory
+(92,95) resources found
+(99,99) arrived at Village with inventory items
+(99,94) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,93) found playmate SF8 and exchange discivered Areas, Energy and pot
+(98,89) resources found
+(99,97) used a potion from inventory
+(99,98) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+-- SF4
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(95,99) found playmate SF2 and exchange discivered Areas, Energy and pot
+(92,96) agent found energy and save to inventory
+(90,96) resources found
+(93,96) energy found
+(99,99) arrived at Village with inventory items
+(98,98) used a potion from inventory
+(95,89) agent found energy and save to inventory
+(94,85) agent found energy and save to inventory
+(96,83) resources found
+(99,83) resources found
+(99,84) energy found
+(99,88) used a potion from inventory
+(99,89) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,90) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,91) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,94) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,95) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,95) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,94) found playmate SF7 and exchange discivered Areas, Energy and pot
+(99,92) found playmate SF6 and exchange discivered Areas, Energy and pot
+-- SF5
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(93,99) found playmate SF4 and exchange discivered Areas, Energy and pot
+(91,99) found playmate SF4 and exchange discivered Areas, Energy and pot
+(87,99) resources found
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,99) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,99) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF8 and exchange discivered Areas, Energy and pot
+(99,92) agent found energy and save to inventory
+(98,91) used a potion from inventory
+(95,87) agent found energy and save to inventory
+(95,88) resources found
+(99,93) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,94) found playmate SF0 and exchange discivered Areas, Energy and pot
+(94,92) used a potion from inventory
+(92,88) agent found energy and save to inventory
+(90,88) agent found energy and save to inventory
+(86,90) resources found
+-- SF6
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,98) resources found
+(99,99) arrived at Village with inventory items
+(97,99) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(96,94) found playmate SF2 and exchange discivered Areas, Energy and pot
+(96,97) agent found energy and save to inventory
+(93,95) resources found
+(97,95) resources found
+(99,95) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,96) used a potion from inventory
+(99,99) arrived at Village with inventory items
+(96,95) found playmate SF7 and exchange discivered Areas, Energy and pot
+(92,92) agent found energy and save to inventory
+(91,91) agent found energy and save to inventory
+(90,90) agent found energy and save to inventory
+(88,89) resources found
+(91,89) resources found
+(99,89) used a potion from inventory
+(99,91) resources found
+(99,99) arrived at Village with inventory items
+-- SF7
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF6 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(97,97) resources found
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(98,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF6 and exchange discivered Areas, Energy and pot
+(98,96) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,94) resources found
+(99,99) arrived at Village with inventory items
+(96,95) searching for energy, going to (99,96)
+(97,95) searching for energy, going to (99,96)
+(98,95) searching for energy, going to (99,96)
+(99,95) searching for energy, going to (99,96)
+(99,95) used a potion from inventory
+(97,95) found playmate SF3 and exchange discivered Areas, Energy and pot
+(96,93) resources found
+(98,93) resources found
+(99,93) resources found
+(99,96) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(89,94) agent found energy and save to inventory
+(89,94) used a potion from inventory
+(86,94) resources found
+-- SF8
+(99,97) resources found
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF7 and exchange discivered Areas, Energy and pot
+(99,98) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF2 and exchange discivered Areas, Energy and pot
+(97,99) found playmate SF6 and exchange discivered Areas, Energy and pot
+(95,99) found playmate SF2 and exchange discivered Areas, Energy and pot
+(95,99) found playmate SF4 and exchange discivered Areas, Energy and pot
+(93,99) found playmate SF4 and exchange discivered Areas, Energy and pot
+(93,99) found playmate SF5 and exchange discivered Areas, Energy and pot
+(91,99) found playmate SF4 and exchange discivered Areas, Energy and pot
+(91,99) found playmate SF5 and exchange discivered Areas, Energy and pot
+(89,99) found playmate SF5 and exchange discivered Areas, Energy and pot
+(87,97) resources found
+(90,97) energy found
+(99,99) arrived at Village with inventory items
+(94,97) used a potion from inventory
+(92,91) resources found
+(96,91) resources found
+(99,98) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(97,92) searching for energy, going to (99,96)
+(98,92) searching for energy, going to (99,96)
+(99,92) searching for energy, going to (99,96)
+(99,92) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,92) used a potion from inventory
+-- SF9
+(99,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF6 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF7 and exchange discivered Areas, Energy and pot
+(99,97) found playmate SF8 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(98,97) found playmate SF7 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF1 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF2 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(97,97) found playmate SF7 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF0 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF3 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF4 and exchange discivered Areas, Energy and pot
+(95,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(93,97) found playmate SF5 and exchange discivered Areas, Energy and pot
+(93,93) resources found
+(99,99) arrived at Village with inventory items
+(97,99) found playmate SF5 and exchange discivered Areas, Energy and pot
+(93,94) resources found
+(96,94) searching for energy, going to (99,96)
+(97,94) searching for energy, going to (99,96)
+(97,94) found playmate SF1 and exchange discivered Areas, Energy and pot
+(98,94) searching for energy, going to (99,96)
+(99,94) searching for energy, going to (99,96)
+(99,96) used a potion from inventory
+(99,99) arrived at Village with inventory items
+(96,86) resources found
+(97,86) energy found
+(99,86) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,88) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,88) used a potion from inventory
+(99,89) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,90) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,91) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,93) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,94) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,96) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,98) found playmate SF4 and exchange discivered Areas, Energy and pot
+(99,99) arrived at Village with inventory items
+(99,99) found playmate SF4 and exchange discivered Areas, Energy and pot
+-- SS0
+(97,98) found energy
+(98,99) found resource C
+(99,99) arrived to Village
+(99,95) found resource G
+(99,97) return to Village
+(99,98) return to Village
+(99,99) arrived to Village
+(96,99) found resource C
+(97,99) return to Village
+(98,99) return to Village
+(99,99) arrived to Village
+-- SS1
+(98,96) found resource I
+(99,96) found energy on the way back to village
+(99,98) return to Village
+(99,99) arrived to Village
+(91,96) found energy
+(90,95) found resource G
+(91,95) return to Village
+(92,95) return to Village
+(93,95) return to Village
+(95,95) return to Village
+(97,95) return to Village
+(99,95) return to Village
+(99,97) return to Village
+(99,99) arrived to Village
+-- SS2
+(98,95) found energy
+(98,94) found resource I
+(99,94) return to Village
+(99,95) return to Village
+(99,96) return to Village
+(99,97) return to Village
+(99,98) return to Village
+(99,99) arrived to Village
+-- SS3
+(97,94) found energy
+(94,94) found resource I
+(96,94) return to Village
+(98,94) return to Village
+(99,94) return to Village
+(99,96) return to Village
+(99,98) return to Village
+(99,99) arrived to Village
+(93,99) found resource I
+(94,99) return to Village
+(96,99) return to Village
+(98,99) return to Village
+(99,99) arrived to Village
+-- SS4
+(93,92) found resource G
+(95,92) return to Village
+(96,92) return to Village
+(97,92) return to Village
+(98,92) return to Village
+(99,92) return to Village
+(99,94) return to Village
+(99,96) return to Village
+(99,97) return to Village
+(99,98) return to Village
+(99,99) arrived to Village
+-- SS5
+(90,93) found resource I
+(92,93) return to Village
+(93,93) return to Village
+(94,93) return to Village
+(95,93) return to Village
+(96,93) return to Village
+(98,93) return to Village
+(99,93) return to Village
+(99,94) return to Village
+(99,95) return to Village
+(99,97) return to Village
+-- SS6
+(87,93) found energy
+(85,94) found resource I
+(86,94) return to Village
+(87,94) return to Village
+(89,94) return to Village
+(90,94) return to Village
+-- SS7
+(84,94) found energy
+(84,95) found resource W
+(85,95) found energy on the way back to village
+-- SS8
+-- SS9
+
