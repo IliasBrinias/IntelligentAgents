@@ -1,0 +1,8 @@
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\obj\Debug\IntelligentAgents.csproj.AssemblyReference.cache
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\obj\Debug\IntelligentAgents.csproj.SuggestedBindingRedirects.cache
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\obj\Debug\IntelligentAgents.csproj.CoreCompileInputs.cache
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\bin\Debug\IntelligentAgents.exe.config
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\bin\Debug\IntelligentAgents.exe
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\bin\Debug\IntelligentAgents.pdb
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\obj\Debug\IntelligentAgents.exe
+C:\Users\brinias\Desktop\test\IntelligentAgents\IntelligentAgents\obj\Debug\IntelligentAgents.pdb
